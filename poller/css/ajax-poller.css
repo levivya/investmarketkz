@@ -1,0 +1,159 @@
+
+    .poller{	/* The poller box */
+
+		width:180px;
+		height:220px;
+		padding:15px;
+		border:3px double #06186E;
+		background-image:url(images/question.gif);
+		background-repeat:no-repeat;
+		background-position: center center;
+		margin:0px;
+	}
+	/* Poller title above radio buttons */
+	.pollerTitle{
+		margin-bottom:5px;
+		font-weight:bold;
+	}
+	/* Label for each radio button */
+	.pollerOption{
+		margin:0px;
+	}
+	/* Label for each option above graph - i.e. results */
+	.result_pollerOption{
+		margin:0px;
+		font-size:0.8em;
+	}
+	/* Title of poller - when ajax shows the results */
+	.result_pollerTitle{
+		margin-bottom:5px;
+		font-weight:bold;
+		font-size:0.9em;
+	}
+	/* Don't change this one, it is used to get the left and right image(the corner) positioned correctly */
+	.result_pollGraph img{
+		float:left;
+	}
+	/* The <div> tag where the percentage result is shown */
+	.result_pollGraph div{
+		float:left;
+		height:16px;
+		background-repeat:repeat-x;
+		color:#FFF;
+		font-size:0.9em;
+		line-height:16px;
+	}
+	/* Graph div - parent of both the corner images and the div displaying percentage votes */
+	.result_pollGraph{
+		height:16px;
+	}
+
+	/* Message when Ajax is working getting restults fromt the server */
+	.poller_waitMessage{
+		display:none;
+	}
+
+	.result_totalVotes{
+		clear:both;
+		font-size:0.8em;
+		margin-top:15px;
+		font-style:italic;
+		font-weight: bold;
+		color:#06186E
+	}
+
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#545050;
+	background:#fff url(../../media/images/top-bg.png) no-repeat 50% 112px;
+}
+input, select, textarea {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	font-size:11px;
+}
+img {
+	border:0;
+}
+a {
+	color:#1354ad;
+	text-decoration:underline;
+}
+a:hover {
+	text-decoration:none;
+}
+
+.voting {
+	padding:7px 0 17px 13px;
+	margin-bottom:10px;
+	border-bottom:1px solid #b5b8bc;
+
+}
+.voting .question {
+	margin-bottom:6px;
+}
+.voting ul {
+	list-style:none;
+	padding:0 12px 0 0;
+}
+.voting ul li {
+	overflow:hidden;
+	font-size:11px;
+	color:#353535;
+	min-height:35px;
+	height:auto!important;
+	height:35px;
+}
+.voting ul li strong{
+	font-weight:normal;
+	padding-left:9px;
+	position:relative;
+	top:5px;
+	display:block;
+}
+.voting ul strong{
+	font-weight:normal;
+	padding-left:0px;
+	position:relative;
+	top:5px;
+	display:block;
+}
+.voting ul li .line {
+	height:4px;
+	background:#d4d3d3;
+	overflow:hidden;
+	float:left;
+	width:171px;
+	position:relative;
+	top:7px;
+}
+.voting ul li .line span {
+	height:4px;
+	display:block;
+	background:#638dd6;
+}
+.voting ul li .result {
+	float:right;
+	text-align:right;
+	font-size:12px;
+	color:#545050;
+}
+.voting ul .button input {
+	border:0;
+	cursor:pointer;
+	background:url(../../media/images/vote-button.png) no-repeat 0 50%;
+	width:79px;
+	padding:2px 0;
+}
+.voting ul .button {
+	padding-top:10px;
+	height:22px!important;
+	min-height:20px;
+}

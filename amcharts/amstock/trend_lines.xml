@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Note, trend lines are not visible when data sets are compared and values are 
+recalculated to percents. You can use events instead of trend lines for straight 
+horizontal/vertical lines -->
+<trend_lines>
+
+  <trend_line>
+  
+    <!-- Initial trend line date -->
+    <date0>2007-11-19</date0>
+    
+    <!-- last trend line date -->
+    <date1>2008-02-01</date1>
+    
+    <!-- Initial trend line value -->
+    <value0>2593.38</value0>
+    
+    <!-- last trend line value -->
+    <value1>2413.36</value1>
+  
+    <!-- [#00CC00]-->
+    <line_color></line_color>
+    
+    <!-- [100]-->
+    <line_alpha></line_alpha>
+    
+    <!-- [0]-->
+    <line_width></line_width>
+    
+    <!-- [0]-->
+    <dash_length>5</dash_length>
+  
+    <!-- [left] (left/right) -->
+    <axis></axis>
+    
+    <!-- [] id of the chart -->
+    <chart_id>0</chart_id>
+    
+    <!-- [false] (true/false) if locked is set to true, this trend line won't be 
+    deleted when user click on the eraser button -->
+    <locked></locked>
+    
+  </trend_line>
+  
+</trend_lines>

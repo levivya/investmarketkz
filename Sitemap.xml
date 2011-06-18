@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://invest-market.kz/</loc>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/ask_question.php</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/articles.php</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/articles.php</loc>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/income_compare.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/articles.php?type=investor_school</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/vportfolio.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/media_list.php</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/rating.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/calculator1.php</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/calculator2.php</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/im_index.php?type=npfkz</loc>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/im_index.php?type=npfkz</loc>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/articles.php?type=news-npf</loc>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/article.php?type=investor_school&amp;id=23</loc>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/article.php?type=investor_school&amp;id=20</loc>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/article.php?type=investor_school&amp;id=19</loc>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/article.php?type=investor_school&amp;id=24</loc>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=2</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=8</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=4</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=1</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=6</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=16</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=10</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=5</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=3</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=11</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=14</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=9</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/npf/npf.php?id=12</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/deposits.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/banks.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/banks_rating.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/calculator.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=6</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=22</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=20</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=23</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=3</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=7</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=8</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=13</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=19</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=26</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=5</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/deposit/bank.php?id=25</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/article.php?type=investor_school&amp;id=9</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/funds.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/companies.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/rating.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/map.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/calculator.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/pif/analysis.php</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>http://invest-market.kz/article.php?type=investor_school&amp;id=2</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+</urlset>

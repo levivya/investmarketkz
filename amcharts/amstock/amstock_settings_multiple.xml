@@ -1,0 +1,957 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Only the settings with values not equal to defaults are in this file. If you want to see the
+full list of available settings, check the amstock_settings.xml file in the amstock folder. -->
+<settings>
+  <margins>5</margins>
+  <text_size>10</text_size>
+
+  <header>
+    <enabled>false</enabled>
+  </header>
+
+  <number_format>
+    <letters>
+       <letter number="1000">K</letter>
+       <letter number="1000000">M</letter>
+       <letter number="1000000000">B</letter>
+    </letters>
+  </number_format>
+
+  <data_sets>
+
+
+    <data_set did="pifkz">
+       <title>ПИФКЗ</title>
+       <short>ПИФКЗ</short>
+       <description></description>
+       <file_name>data_pifkz.csv</file_name>
+       <main_drop_down selected="true"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pifkz">
+       <title>НПФКЗ</title>
+       <short>НПФКЗ</short>
+       <description></description>
+       <file_name>data_npfkz.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <compare_list_box selected="true"></compare_list_box>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_1">
+       <title>KASE</title>
+       <short>KASE</short>
+       <description></description>
+       <file_name>data_idx_1.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_2">
+       <title>Капитализация акций, млн. долл.</title>
+       <short>Капитализация акций, млн. долл.</short>
+       <description></description>
+       <file_name>data_idx_2.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_3">
+       <title>РТС</title>
+       <short>РТС</short>
+       <description></description>
+       <file_name>data_idx_3.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_6">
+       <title>DJIA</title>
+       <short>DJIA</short>
+       <description></description>
+       <file_name>data_idx_6.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_9">
+       <title>FTSE-100</title>
+       <short>FTSE-100</short>
+       <description></description>
+       <file_name>data_idx_9.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_12">
+       <title>Nikkei 225</title>
+       <short>Nikkei 225</short>
+       <description></description>
+       <file_name>data_idx_12.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_13">
+       <title>SSE Composite</title>
+       <short>SSE Composite</short>
+       <description></description>
+       <file_name>data_idx_13.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_15">
+       <title>KOSPI</title>
+       <short>KOSPI</short>
+       <description></description>
+       <file_name>data_idx_15.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_32">
+       <title>RENCASIA</title>
+       <short>RENCASIA</short>
+       <description></description>
+       <file_name>data_idx_32.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_21">
+       <title>BRENT</title>
+       <short>BRENT</short>
+       <description></description>
+       <file_name>data_idx_21.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_16">
+       <title>USD/KZT</title>
+       <short>USD/KZT</short>
+       <description></description>
+       <file_name>data_idx_16.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_5">
+       <title>Ставка по депозитам (тенге, до 1 года)</title>
+       <short>Ставка по депозитам (тенге, до 1 года)</short>
+       <description></description>
+       <file_name>data_idx_5.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_4">
+       <title>Индекс потребительских цен (Инфляция)</title>
+       <short>Индекс потребительских цен (Инфляция)</short>
+       <description></description>
+       <file_name>data_idx_4.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_7">
+       <title>Ставка по депозитам (тенге, от 1 года)</title>
+       <short>Ставка по депозитам (тенге, от 1 года)</short>
+       <description></description>
+       <file_name>data_idx_7.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_22">
+       <title>Золото (долл./униция)</title>
+       <short>Золото (долл./униция)</short>
+       <description></description>
+       <file_name>data_idx_22.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="idx_23">
+       <title>Серебро (долл./униция)</title>
+       <short>Серебро (долл./униция)</short>
+       <description></description>
+       <file_name>data_idx_23.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_1">
+       <title>НПФ: ГРАНТУМ</title>
+       <short>ГР</short>
+       <description></description>
+       <file_name>data_npf_1.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_2">
+       <title>НПФ: УларУмит</title>
+       <short>Ул</short>
+       <description></description>
+       <file_name>data_npf_2.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_3">
+       <title>НПФ: НПФ Народного Банка Казахстана</title>
+       <short>НП</short>
+       <description></description>
+       <file_name>data_npf_3.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_4">
+       <title>НПФ: НефтеГаз - Дем</title>
+       <short>Не</short>
+       <description></description>
+       <file_name>data_npf_4.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_5">
+       <title>НПФ: Евразийский НПФ</title>
+       <short>Ев</short>
+       <description></description>
+       <file_name>data_npf_5.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_6">
+       <title>НПФ: Атамекен</title>
+       <short>Ат</short>
+       <description></description>
+       <file_name>data_npf_6.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_16">
+       <title>НПФ: ГНПФ</title>
+       <short>ГН</short>
+       <description></description>
+       <file_name>data_npf_16.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_8">
+       <title>НПФ: РЕСПУБЛИКА</title>
+       <short>РЕ</short>
+       <description></description>
+       <file_name>data_npf_8.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_9">
+       <title>НПФ: Казахмыс</title>
+       <short>Ка</short>
+       <description></description>
+       <file_name>data_npf_9.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_10">
+       <title>НПФ: Капитал</title>
+       <short>Ка</short>
+       <description></description>
+       <file_name>data_npf_10.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_11">
+       <title>НПФ: АМАНАТ КАЗАХСТАН</title>
+       <short>АМ</short>
+       <description></description>
+       <file_name>data_npf_11.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_12">
+       <title>НПФ: БТА Казахстан</title>
+       <short>БТ</short>
+       <description></description>
+       <file_name>data_npf_12.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="npf_14">
+       <title>НПФ: Отан</title>
+       <short>От</short>
+       <description></description>
+       <file_name>data_npf_14.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_6">
+       <title>ПИФ: Даму Инвест</title>
+       <short>Да</short>
+       <description></description>
+       <file_name>data_pif_6.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_9">
+       <title>ПИФ: Казначейство</title>
+       <short>Ка</short>
+       <description></description>
+       <file_name>data_pif_9.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_17">
+       <title>ПИФ: RESMI Зарплатный</title>
+       <short>RESM</short>
+       <description></description>
+       <file_name>data_pif_17.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_18">
+       <title>ПИФ: RESMI Монетный двор</title>
+       <short>RESM</short>
+       <description></description>
+       <file_name>data_pif_18.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_29">
+       <title>ПИФ: Фаворит</title>
+       <short>Фа</short>
+       <description></description>
+       <file_name>data_pif_29.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_39">
+       <title>ПИФ: ЦентрКредит - Разумный баланс</title>
+       <short>Це</short>
+       <description></description>
+       <file_name>data_pif_39.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_90">
+       <title>ПИФ: Асыл-Эксперт</title>
+       <short>Ас</short>
+       <description></description>
+       <file_name>data_pif_90.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_91">
+       <title>ПИФ: Фонд акций Сентрас</title>
+       <short>Фо</short>
+       <description></description>
+       <file_name>data_pif_91.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+    <data_set did="pif_93">
+       <title>ПИФ: Табыс</title>
+       <short>Та</short>
+       <description></description>
+       <file_name>data_pif_93.csv</file_name>
+       <main_drop_down selected="false"></main_drop_down>
+       <csv>
+         <reverse>true</reverse>
+         <separator>,</separator>
+         <date_format>YYYY-MM-DD</date_format>
+         <decimal_separator>.</decimal_separator>
+         <columns>
+           <column>date</column>
+           <column>close</column>
+         </columns>
+       </csv>
+    </data_set>
+          
+
+  </data_sets>
+
+  <charts>
+  	<chart cid="0">
+  	  <bg_color></bg_color>
+      <border_color>#CCCCCC</border_color>
+      <border_alpha>100</border_alpha>
+
+      <grid>
+        <x>
+          <dashed></dashed>
+        </x>
+
+
+        <y_right>
+          <color>cccccc</color>
+          <alpha>100</alpha>
+          <dashed></dashed>
+        </y_right>
+      </grid>
+
+      <legend>
+        <graph_on_off>false</graph_on_off>
+        <fade_others_to>10</fade_others_to>
+        <show_date>true</show_date>
+      </legend>
+
+  		<graphs>
+  			<graph gid="0">
+  			  <axis>right</axis>
+  				<type>line</type>
+  				<data_sources>
+  				  <close>close</close>
+          </data_sources>
+
+          <compare_source>close</compare_source>
+
+  		    <legend>
+            <date key="false" title="false"><![CDATA[<b>{close}</b>]]></date>
+            <period key="true" title="true"><![CDATA[Отк.:<b>{open}</b> Мин.:<b>{low}</b> Мах.:<b>{high}</b> Пос.:<b>{close}</b>]]></period>
+            <date_comparing key="true" title="true"><![CDATA[{close.percents}]]></date_comparing>
+            <period_comparing key="true" title="true"><![CDATA[{close.percents}]]></period_comparing>
+          </legend>
+  			</graph>
+  		</graphs>
+  	</chart>
+  </charts>
+
+  <date_formats>
+    <legend>
+      <weeks>month DD, YYYY</weeks>
+    </legend>
+  </date_formats>
+
+
+  <data_set_selector>
+    <width>200</width>
+    <max_comparing_count>6</max_comparing_count>
+ 	<main_drop_down_title>Выбрать из списка:</main_drop_down_title>
+ 	<compare_list_box_title>Сравнить с (НПФ, ПИФы и индексы):</compare_list_box_title>
+ 	<balloon_text>{title}</balloon_text>
+ 	<drop_down>
+      <scroller_color>F561A5</scroller_color>
+    </drop_down>
+  </data_set_selector>
+
+  <period_selector>
+    <date_format>DD-MM-YYYY</date_format>
+
+    <button>
+      <bg_color_hover></bg_color_hover>
+      <bg_color_selected></bg_color_selected>
+      <text_color_hover>ffffff</text_color_hover>
+      <text_color_selected>ffffff</text_color_selected>
+    </button>
+
+	<periods>
+    <period type="DD" count="10">10Д</period>
+    	<period type="MM" count="1">1M</period>
+    	<period type="MM" count="6">6M</period>
+    	<period selected="true" type="YYYY" count="1">12M</period>
+    	<period type="YYYY" count="3">36M</period>
+    	<period type="YTD" count="0">YTD</period>
+    <period type="MAX">MAX</period>
+	</periods>
+
+		<custom_period_title>Период:</custom_period_title>
+  </period_selector>
+
+  <header>
+    <enabled></enabled>
+    <text><![CDATA[<b>{title}</b> ({short}) {description}]]></text>
+    <text_size>12</text_size>
+  </header>
+
+  <background>
+    <alpha>100</alpha>
+	<color>FFFFFF</color>
+  </background>
+
+  <plot_area>
+    <border_color>cccccc</border_color>
+  </plot_area>
+
+  <export_as_image>
+   <file>amcharts/amstock/export.php</file>
+  </export_as_image>
+
+
+  <scroller>
+    <enabled>true</enabled>
+    <height>50</height>
+    <graph_data_source>close</graph_data_source>
+    <bg_color>f5f5f5,ffffff</bg_color>
+    <resize_button_style>dragger</resize_button_style>
+  </scroller>
+
+  <strings>
+    <!-- [Processing data] (text) -->
+    <processing_data>Обработка данных</processing_data>
+    <!-- [Loading data] (text) -->
+    <loading_data>Загрузка данных</loading_data>
+    <!-- [Check date format] (text) -->
+    <wrong_date_format></wrong_date_format>
+    <!-- [Export as image] (text) -->
+    <export_as_image></export_as_image>
+    <!-- [Collecting data] (text) -->
+    <collecting_data></collecting_data>
+    <!-- [No data] (text) -->
+    <no_data></no_data>
+
+    <!-- In case your axis values display duration instead of numbers, these units
+    will be used to format duration -->
+    <duration_units>
+      <!-- [] unit of seconds -->
+      <ss></ss>
+      <!-- [:] unit of minutes -->
+      <mm></mm>
+      <!-- [:] unit of hours -->
+      <hh></hh>
+      <!-- [d. ] unit of days -->
+      <DD></DD>
+    </duration_units>
+
+ 	  <months>
+    	<jan>Янв</jan>
+    	<feb>Фев</feb>
+    	<mar>Мар</mar>
+    	<apr>Апр</apr>
+    	<may>Май</may>
+    	<jun>Июн</jun>
+    	<jul>Июл</jul>
+    	<aug>Авг</aug>
+    	<sep>Сен</sep>
+    	<oct>Окт</oct>
+    	<nov>Ноя</nov>
+    	<dec>Дек</dec>
+  	</months>
+
+  	<weekdays>
+  	   <sun>Вс</sun>
+  	   <mon>Пн</mon>
+  	   <tue>Вт</tue>
+  	   <wed>Ср</wed>
+  	   <thu>Чт</thu>
+  	   <fri>Пт</fri>
+  	   <sat>Сб</sat>
+  	</weekdays>
+  </strings>
+
+</settings>
+
+          
