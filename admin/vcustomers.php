@@ -24,6 +24,14 @@ $('#data').dataTable(
 });
 </script>
 
+<script type="text/javascript">
+function delete_user(user_id)
+{  //alert(user_id);
+  document.getElementById("user_id").value=user_id;
+  document.forms["mainform"].submit();
+}
+</script>
+
 </head>
 
 
@@ -39,13 +47,20 @@ $('#data').dataTable(
 <div class="title"><a class="more" href="index.php">Панель администратора</a>Управление пользователями</div>
 
 <?php
+
+if (isset($delete_user_id))
+{
+  $query="delete from ism_users where user_id=".$delete_user_id;
+  $result=exec_query($query);
+  $query="delete from ism_customers where user_id=".$delete_user_id;
+  $result=exec_query($query);
+  if ($result)     echo '<div class="info-message">'.echoNLS('Пользователь удален!','').'</div>';
+}
+
+
+
 if ((isset($grp) && $grp==2))
 {
-
-if (!isset($page_type)) $page_type=2;
-if (!isset($page)) $page=1;
-
-
 $query="
          select  u.user_id
                 ,u.user_name
@@ -81,6 +96,7 @@ echo '
           <th>'.echoNLS('Активация','').'</th>
           <th>'.echoNLS('Последний вход','').'</th>
           <th>'.echoNLS('Посещений','').'</th>
+          <th></th>
         </tr>
 </thead>
 </tbody>
@@ -98,6 +114,7 @@ for ($i=0;$i<sizeof($vcustomers['user_id']);$i++)
           <td>'.($str3=($vcustomers['ulock'][$i]==0)?('<a href="../conf_reg.php?vuser_id='.$vcustomers['user_id'][$i].'&act=conf">'.echoNLS('Активировать','').'</a>'):(echoNLS('Активированно',''))).'</td>
           <td>'.$vcustomers['last_login'][$i].'</td>
           <td>'.$vcustomers['visit'][$i].'</td>
+          <td><a href="vcustomers.php?delete_user_id='.$vcustomers['user_id'][$i].'" ><img src="../media/images/validno.png"></a></td>
       </tr>
       ';
   }
@@ -110,6 +127,8 @@ else
 }
 
 }
+
+
 ?>
 </div>
 
