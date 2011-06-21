@@ -38,6 +38,7 @@ fclose($fh);
 		so.addVariable("path", "../amcharts/amstock/");
 		so.addVariable("settings_file", encodeURIComponent("../amcharts/amstock/amstock_settings.xml"));
 		so.addVariable("preloader_color", "#184789");
+  	    so.addParam("wmode", "opaque");
 		so.write("flashcontent");
 	</script>
 <!-- end of amstock script -->
