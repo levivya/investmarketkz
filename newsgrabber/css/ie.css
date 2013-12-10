@@ -1,0 +1,14 @@
+* html #logo, 
+* html #nav, 
+* html #title, 
+* html #main-body, 
+* html #extra,
+* html #port,
+* html .prod-feature,
+* html dl.teaser {
+	height: 1%;
+	}
+
+* html ul.articles li a { height: 1%; }
+
+* html #wrap { height: 1%; }

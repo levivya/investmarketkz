@@ -72,7 +72,7 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:13px;
 	color:#545050;
-	background:#fff url(../../media/images/top-bg.png) no-repeat 50% 112px;
+	background:#fff url(../media/images/top-bg.png) no-repeat 50% 112px;
 }
 input, select, textarea {
 	font-family:Arial, Helvetica, sans-serif;
@@ -151,6 +151,11 @@ a:hover {
 	background:url(../../media/images/vote-button.png) no-repeat 0 50%;
 	width:79px;
 	padding:2px 0;
+	-moz-border-radius: 2px;
+       -webkit-border-radius: 2px;
+       border-radius: 2px;
+       height: 20px;
+       behavior: url(path-to/PIE.htc);
 }
 .voting ul .button {
 	padding-top:10px;

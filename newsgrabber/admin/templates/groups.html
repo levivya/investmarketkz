@@ -1,0 +1,79 @@
+<script>
+        function delMenuItem(id) {
+                temp = showModalDialog("groups.delete.confirm.php?id="+id, id , "dialogWidth:440px; dialogHeight:300px");
+                if(temp != null) {
+                        location.href='{HTTP_ROOT}admin/groups.php?action=delete&item='+id+'&to='+temp;
+                }
+        }
+</script>
+<SCRIPT language=JavaScript>
+function treeExpand(oObj, trname) {
+	tr = document.getElementById("tr_"+trname);
+        img = document.getElementById("img_"+trname);
+	var d, s;
+
+	if (tr.style.display == '')			{
+		d	= 'none';	s	= img.src.replace(/opened/g, "closed");} else
+	{	d	= '';		s	= img.src.replace(/closed/g, "opened");}
+	tr.style.display	= d;
+	img.src	= s;
+	img.parentNode.setAttribute("href", "#");
+        return true;
+}
+
+function SetCookie (name, value) {
+      var t = new Image();
+      t.src = '{HTTP_ROOT}admin/session.save.value.php?g=go&i='+name+'&v='+(value ? "o" : "");
+}
+</SCRIPT>
+
+<style>
+.toc-link-normal {
+        FONT: 12px Verdana; COLOR: #3333ff; TEXT-DECORATION: none
+}
+.toc-link-normal:hover {
+        COLOR: #6666ff; TEXT-DECORATION: underline
+}
+.toc-link-normal:active {
+        COLOR: red
+}
+.toc-link-disabled {
+        FONT: 12px Verdana; CURSOR: default; COLOR: #2222AA
+}
+.toc-link-bgcolor-active {
+        backgroundcolor: green
+}
+
+
+.MenuItem {
+        color: Black;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: hand;
+}
+</style>
+
+<form name=update method=POST>
+<if add><p><a href=?action=edit&item=new{add_info}><b>{button_add}</b></a></p></if add>
+<b>{caption_total_records}: {count_items}</b>
+<br>
+<table cellpadding="0" cellspacing="0" border="0" id="maintable" width="100%">
+<tr onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';"><td colspan="2" class="listHeader"><span style="font-size: 120%; color: navy;"><b>{caption_main_page}</b> <font color="black">[</font> <a href="?action=showoptions&item=main">{caption_setup}</a> <font color="black">]</font></td></tr>
+<tree menu>
+<TABLE border=0 cellSpacing=0 cellPadding=0>
+<TR onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';">
+        <TD class="list1"  style="cursor: hand;" height="1px" <if background3_image></if background3_image> <if opened>onclick="treeExpand(this.parentNode, '{groups_id}');  SetCookie('{groups_id}', (document.all['tr_{groups_id}'].style.display == ''))"</if opened>>
+                <if opened><A onclick="return false;" href="#"></if opened><IMG src="{HTTP_ROOT}admin/i/{toc_image}.gif" border=0 id="img_{groups_id}"><if opened></A></if opened></TD>
+        <TD class="list1" vAlign="middle" width=100% <if opened>onclick="treeExpand(this.parentNode, '{groups_id}');  SetCookie('opened[{groups_id}]', (document.all['tr_{groups_id}'].style.display == ''))"</if opened>><A style="font: normal 12px Verdana, Arial; color: black;">&nbsp;<b>{groups_name}</b></A>&nbsp;&nbsp;</TD>
+                        <TD class="list1" align="right"><nobr>[&nbsp;
+                        <if add_subgroups><a href="?action=edit&groups_owner={groups_id}"><img src="{HTTP_ROOT}admin/i/icons/enzy_new.gif" align="absmiddle" class="absmiddle" alt="{button_add}" border="0"/></a></if add_subgroups><if !add_subgroups><img src="{HTTP_ROOT}admin/i/icons/white.gif" align="absmiddle" class="absmiddle" alt="" border="0"/></if !add_subgroups>&nbsp;&nbsp;
+                        <a href="?action=edit&item={groups_id}"><img src="{HTTP_ROOT}admin/i/icons/enzy.gif" align="absmiddle" class="absmiddle" alt="{button_edit}" border="0"/></a>&nbsp;&nbsp;
+                        <a href="?action={action_value}&item={groups_id}"><img src="{HTTP_ROOT}admin/i/icons/{action_image}" align="absmiddle" class="absmiddle" alt="{action_title}" border="0"/></a>&nbsp;&nbsp;
+                        <a href="javascript:delMenuItem({groups_id});"><img src="{HTTP_ROOT}admin/i/icons/forum_del_threads.gif" align="absmiddle" class="absmiddle" alt="{button_delete}" border="0"/></a>&nbsp;
+                      ]</nobr></span></TD></TR>
+
+<if opened><TR id=tr_{groups_id} style="DISPLAY: {child_style};">
+<TD class="list1" height=2>&nbsp;</TD><TD colSpan="2"><childs></TD></TR></if opened></TABLE>
+</tree menu>
+</TD></TR></TABLE>

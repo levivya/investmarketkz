@@ -1,0 +1,59 @@
+<div class="pageAction">{page_subtitle}</div>
+
+<form name="list" method="POST">
+<table cellpadding="0" cellspacing="0">
+<tr>
+    <td width="35%" style="padding: 5px 5px 3px 5px;" bgcolor="#7eba59">
+        <selector templates_groups style="width: 100%"><br>
+    </td>
+    <if TEMPLATES_GROUPS_ADD>
+    <td style="padding: 5px 10px 3px 10px; border: solid #fff; border-width: 0px 5px;" bgcolor="#e2d86b" width="35%">
+        <input type="submit" name="copyTemplate" value="{button_copy_group}">
+    </td>
+    <td width="30%" style="padding: 5px 5px 3px 5px;" bgcolor="#de5050">
+        <input type="submit" name="deleteTemplate" value="{button_delete_group}" style="width: 100%">
+    </td>
+    </if TEMPLATES_GROUPS_ADD>
+</tr>
+<tr>
+    <td width="300px" style="padding: 3px 5px 5px 5px;" bgcolor="#7eba59">
+        <input type="submit" name="setTemplate" value="{button_use_group}" style="width: 100%">
+    </td>
+    <if TEMPLATES_GROUPS_ADD>
+    <td style="padding: 3px 10px 5px 10px; border: solid #fff; border-width: 0px 5px;" bgcolor="#e2d86b">
+        <input type="text" name="template_name" value="{templates_new_title}" style="width: 100%"><br>
+    </td>
+    <td width="200px" style="padding: 3px 5px 5px 5px;">
+    </td>
+    </if TEMPLATES_GROUPS_ADD>
+</tr>
+
+</table>
+</form>
+
+<table cellpadding="0" cellspacing="0" border="0" id="maintable" width="100%">
+<tr>
+        <loop fields>
+        <td class="listHeader" width="{field_width}" align="center"><nobr><b><a href=?{links}order={field_name}&sort={sort}&page={items_page}>{field_title}</a></b></nobr></td>
+        </loop fields>
+        <td class="listHeader" align="center" width="10">&nbsp;</td>
+</tr>
+<loop items>
+<tr onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';">
+        <loop fields_values>
+        <td class="list">{{field_name}}</td>
+        </loop fields_values>
+        <td class="list" align="left">    <nobr>
+                <if edit>| <a href="?action=edit&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/enzy.gif" align="absmiddle" class="absmiddle" alt="{button_edit}" border="0"/></a> | </if edit>
+                <if delete><a href="?action=delete&item={{KeyName}}{add_info}" onClick="return window.confirm('{caption_delete_confirm} &quot;{delete_name}&quot;?')"><img src="{HTTP_ROOT}admin/i/icons/forum_del_threads.gif" align="absmiddle" class="absmiddle" alt="{button_delete}" border="0"/></a> |</if delete>
+                </nobr>
+</tr>
+</loop items>
+</table>
+
+<form name="cssAdd" method="POST" enctype="multipart/form-data" onSubmit="savecss.disabled = true;">
+<div class="pageAction"><b>{caption_cssadd}</b></div>
+<p><font size="-2">{templates_attention}</font></p>
+<if Error><p><font color="red">{ErrorMessage}</font></p></if Error>
+<input type="file" name="newcss"> <input type="submit" name="savecss" value="{button_loadfile}" style="font-size: 10px;">
+</form>

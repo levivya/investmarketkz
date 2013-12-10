@@ -1,0 +1,458 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # vBulletin 3.8.0
+|| # ---------------------------------------------------------------- # ||
+|| # Copyright ©2000-2009 Jelsoft Enterprises Ltd. All Rights Reserved. ||
+|| # This file may not be redistributed in whole or significant part. # ||
+|| # ---------------- VBULLETIN IS NOT FREE SOFTWARE ---------------- # ||
+|| # http://www.vbulletin.com | http://www.vbulletin.com/license.html # ||
+|| #################################################################### ||
+\*======================================================================*/
+
+/* Definitions we expect */
+form {
+	margin: 0px;
+}
+
+label {
+	cursor: default;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+.inlineimg {
+	vertical-align: middle;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.vbmenu_hilite * {
+	cursor: pointer;
+}
+
+/* Auto-clearing of floats */
+.floatcontainer:after, .block_row:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.floatcontainer, .block_row {
+	display: inline-block;
+}
+/* IE-Mac hide \*/
+* html .floatcontainer, * html .block_row {
+	height: 1%;
+}
+.floatcontainer, .block_row {
+	display: block;
+}
+/* End IE-Mac hide */
+
+/*======================================================================*\
+|| ####################################################################
+|| # NulleD - FintMax
+|| # CVS: $RCSfile$ - $Revision: 15827 $
+|| ####################################################################
+\*======================================================================*/
+
+/**
+* vBulletin 3.8.0 CSS
+* Style: 'igromania'; Style ID: 5
+*/
+body
+{
+	background: #D9C39C;
+	color: black;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	gmargin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link, body_alink
+{
+	color: #000000;
+}
+a:visited, body_avisited
+{
+	color: #000000;
+}
+a:hover, a:active, body_ahover
+{
+	color: #FF4400;
+}
+.page
+{
+	background: transparent;
+	color: #000000;
+	font-weight: bold;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{    
+	background: #D5B989;
+	color: #000000;
+	border: 1px solid #000000;
+}
+
+.tborder2
+{    
+	background: #D5B989;
+	color: #000000;	    	
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+.menus
+{
+    text-align:right;
+    color: #EADCB9;	
+    padding: 10px;	
+	width: 400px;
+}
+
+.menus a:link, a:visited
+{
+    color: #EADCB9;
+}
+
+.tcat
+{
+	background: #600505 url(index_files/gradient.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #FFFF66;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #886620 url(index_files/gradienu.gif) repeat-x top left;
+	color: #D9C39C;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link, .thead_alink
+{
+	color: #FFFFFF;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #FFFFFF;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #FFFF00;
+}
+.tfoot
+{
+	background: #400505 url(index_files/gradienv.gif) repeat-x top left;
+	color: #E0E0F6;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #E0E0F6;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #E0E0F6;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #FFFF66;
+}
+.alt1, .alt1Active
+{
+	background: #EADCB9;	
+	color: #000000;
+}
+.alt1 a:link, .alt1_alink, .alt1Active a:link, .alt1Active_alink
+{
+	color: black;
+}
+.alt1 a:visited, .alt1_avisited, .alt1Active a:visited, .alt1Active_avisited
+{
+	color: black;
+}
+.alt1 a:hover, .alt1 a:active, .alt1_ahover, .alt1Active a:hover, .alt1Active a:active, .alt1Active_ahover
+{
+	color: red;
+}
+.alt2, .alt2Active
+{
+	background: #D9C39C;
+	color: #000000;
+}
+.alt2 a:link, .alt2_alink, .alt2Active a:link, .alt2Active_alink
+{
+	color: black;
+}
+.alt2 a:visited, .alt2_avisited, .alt2Active a:visited, .alt2Active_avisited
+{
+	color: black;
+}
+.alt2 a:hover, .alt2 a:active, .alt2_ahover, .alt2Active a:hover, .alt2Active a:active, .alt2Active_ahover
+{
+	color: red;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #000000;
+}
+.wysiwyg
+{
+	background: #F5F5FF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+.wysiwyg a:link, .wysiwyg_alink
+{
+	color: #000000;
+}
+.wysiwyg a:visited, .wysiwyg_avisited
+{
+	color: #000000;
+}
+.wysiwyg a:hover, .wysiwyg a:active, .wysiwyg_ahover
+{
+	color: #FF4400;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	color: black;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #C00505;
+}
+.navbar
+{
+	color: black;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.navbar a:link, .navbar_alink
+{
+	color: black;
+	text-decoration: bold;
+}
+.navbar a:visited, .navbar_avisited
+{
+	color: black;
+	text-decoration: bold;
+}
+.navbar a:hover, .navbar a:active, .navbar_ahover
+{
+	color: red;
+	text-decoration: bold;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #EADCB9;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D9C39C;
+	color: #000000;
+}
+legend
+{
+	color: #EADCB9;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background: #700505;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background: #D9C39C;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: black;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: black;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: black;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #EADCB9;
+	color: red;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: red;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: red;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: red;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; text-decoration: none}
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+
+#map {	
+	width:70%;
+    height: 100%;	
+	font-size:95%;
+	line-height:145%;	
+	padding-top:8px;
+	margin: 40px;
+	padding:10px; 
+	padding-bottom:50px;
+	padding-top:0;
+}
+
+#map li {
+	background:url(icons000.gif) 0 -560px no-repeat;
+	padding-left:22px;
+	list-style:none;
+	margin-top:5px;	
+}
+
+#timecon{position: relative; z-index: 5; margin-top: -167px; margin-left: 8px;}
+#opis{position: absolute; z-index: -2;}
+#posts{position: relative; z-index: 6; background: url(bg.png) repeat;}
+
+#f1{ display: block; margin-top: -2px; margin-left: 2px; float:center; width:283px; z-index: 2; height: 166px; background: url(f1.png) center top no-repeat; text-decoration: none; position: relative;}
+#f1c{ margin-top: -167px; margin-left: 289px;}
+#f1b{ width:283px; margin-top: -2px; margin-left: 2px; position: absolute; z-index: 1; font-size:8pt;}
+#f2{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:134px; z-index: 2; height: 14px; background: url(f2.png) center top no-repeat; text-decoration: none; position: relative;}
+#f2c{ margin-top: -16px; margin-left: 141px;}
+#f3{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:450px; z-index: 2; height: 18px; background: url(f3.png) center top no-repeat; text-decoration: none; position: relative;}
+#f3c{ margin-top: -25px; margin-left: 457px;}
+#f4{ display: block; margin-top: 2px; margin-left: -2px; float:center; width:453px; z-index: 2; height: 17px; background: url(f4.png) center top no-repeat; text-decoration: none; position: relative;}
+#f5{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:888px; z-index: 2; height: 149px; background: url(f5.png) center top no-repeat; text-decoration: none; position: relative;}
+#f5b{ width:880px; margin-top: 0px; margin-left: 2px; position: absolute; z-index:1; font-size:8pt;}
+#f6{ display: block; margin-top: 2px; margin-left: -2px; float:center; width:412px; z-index: 2; height: 15px; background: url(f6.png) center top no-repeat; text-decoration: none; position: relative;}
+#f7{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:286px; z-index: 2; height: 16px; background: url(f7.png) center top no-repeat; text-decoration: none; position: relative;}
+#f7b{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:286px; z-index: 2; height: 16px; background: url(f7b.png) center top no-repeat; text-decoration: none; position: relative;}
+#f8{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:183px; z-index: 2; height: 17px; background: url(f8.png) center top no-repeat; text-decoration: none; position: relative;}
+#f9{ display: block; margin-top: 0px; margin-left: 2px; float:center; width:285px; z-index: 2; height: 16px; background: url(f9.png) center top no-repeat; text-decoration: none; position: relative;}

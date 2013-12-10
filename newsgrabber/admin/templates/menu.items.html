@@ -1,0 +1,83 @@
+<script>
+        function delMenuItem(id) {
+                temp = showModalDialog("menu.confirm.php?id="+id, id , "dialogWidth:440px; dialogHeight:300px");
+                if(temp != null) {
+                  location.href='menu.php?action=delete&item='+id+'&to='+temp;
+                }
+        }
+</script>
+<SCRIPT language=JavaScript>
+function treeExpand(oObj, trname) {
+	tr = document.getElementById("tr_"+trname);
+    img = document.getElementById("img_"+trname);
+	var d, s;
+
+	if (tr.style.display == '')			{
+		d	= 'none';	s	= img.src.replace(/opened/g, "closed");} else
+	{	d	= '';		s	= img.src.replace(/closed/g, "opened");}
+	tr.style.display	= d;
+	img.src	= s;
+	img.parentNode.setAttribute("href", "#");
+        return true;
+}
+
+function SetCookie (name, value) {
+      var t = new Image();
+      t.src = '{HTTP_ROOT}admin/session.save.value.php?g=so&i='+name+'&v='+(value ? "o" : "");
+}
+</SCRIPT>
+
+<style>
+.toc-link-normal {
+        FONT: 12px Verdana; COLOR: #3333ff; TEXT-DECORATION: none
+}
+.toc-link-normal:hover {
+        COLOR: #6666ff; TEXT-DECORATION: underline
+}
+.toc-link-normal:active {
+        COLOR: red
+}
+.toc-link-disabled {
+        FONT: 12px Verdana; CURSOR: default; COLOR: #2222AA
+}
+.toc-link-bgcolor-active {
+        backgroundcolor: green
+}
+
+
+.MenuItem {
+        color: Black;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+}
+</style>
+
+<form name=update method=POST>
+<input type="hidden" name="action" value="save_order">
+<b>{caption_total_records}: {count_items}</b>
+
+<br>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top: solid 3px #7aa1e6; margin-top: 10px;">
+<tr><td>
+<tree menu>
+<TABLE border=0 cellSpacing=0 cellPadding=0>
+<TR onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';">
+        <TD class="list1"  style="cursor: hand;" height="1px" <if opened>onclick="treeExpand(this.parentNode, '{menu_id}');  SetCookie('{menu_id}', (document.all['tr_{menu_id}'].style.display == ''))"</if opened>>
+                <if opened><A onclick="return false;" href="#"></if opened><IMG src="{HTTP_ROOT}admin/i/{toc_image}.gif" border=0 id="img_{menu_id}"><if opened></A></if opened></TD>
+        <TD class="list1" vAlign="middle" width="100%"><A style="font: normal 12px Verdana, Arial; color: black;">&nbsp;<b><nobr>{menu_name}</nobr></b></A>&nbsp;</TD>
+
+                        <TD class="list1" align="right"><nobr>[&nbsp;
+                        <if menu_item><a href="?action=edit&menu_owner={menu_id}"><img src="{HTTP_ROOT}admin/i/icons/enzy_new.gif" align="absmiddle" class="absmiddle" alt="{button_add}" border="0"/></a>&nbsp;&nbsp;</if menu_item>
+                        <if !menu_item><img src="{HTTP_ROOT}admin/i/icons/white.gif" align="absmiddle" class="absmiddle" border="0"/>&nbsp;&nbsp;</if !menu_item>
+
+                        <a href="?action=edit&menu_id={menu_id}"><img src="{HTTP_ROOT}admin/i/icons/enzy.gif" align="absmiddle" class="absmiddle" alt="{button_edit}" border="0"/></a>&nbsp;&nbsp;
+                        <if menu_delete><a href="javascript:delMenuItem({menu_id});"><img src="{HTTP_ROOT}admin/i/icons/forum_del_threads.gif" align="absmiddle" class="absmiddle" alt="{button_delete}" border="0"/></a>&nbsp;</if menu_delete>
+                        <if !menu_delete><img src="{HTTP_ROOT}admin/i/icons/white.gif" align="absmiddle" class="absmiddle" border="0"/>&nbsp;</if !menu_delete>
+                      ]</nobr></TD></TR>
+
+<if opened><TR id=tr_{menu_id} style="DISPLAY: {child_style};">
+<TD class="list1" height=2></TD><TD colSpan="2"><childs></TD></TR></if opened></TABLE>
+</tree menu>
+</td></tr></table>
+</form>

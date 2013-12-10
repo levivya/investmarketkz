@@ -1,0 +1,46 @@
+<div class="pageAction"><p align="center"><b>{action} {caption_subtitle}</b></p></div>
+<script>
+   function check() {
+       if (document.forms['editForm'].elements['action'].value == 'preview') return true;
+
+       document.editForm.save.disabled = true;
+
+
+       return true;
+   }
+</script>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" bgcolor="#f5f5f5" style="border: solid 1px #7f9db9; margin-bottom: 5px;">
+<form name="editForm" method="POST" onSubmit="return check();" enctype="multipart/form-data">
+<input type="hidden" name="{KeyName}" value="{KeyValue}">
+<input type="hidden" name="action" value="save">
+<input type="hidden" name="referer" value="{referer}">
+   <if Error><TR><TD colspan=2><font color=red>{ErrorMessage}</font></TD></TR></if Error>
+   <TR><TD width="150" align="right">{title_templates_name}:</TD>
+       <TD align=left>
+       {templates_name}
+       </TD></TR>
+
+   <TR><TD width="150" align="right">{title_templates_title}:</TD>
+       <TD align=left>
+       <input type="text" name="templates_title" value="{templates_title}" style="width: 100%;">
+       </TD></TR>
+
+   <TR><TD width="150" valign=top align="right">{title_templates_body}<font color=red>*</font>:</TD>
+       <TD align=left>
+       <textarea name="templates_body" style="width: 100%; height: 450px;" wrap="OFF">{templates_body}</textarea>
+       </TD></TR>
+</TABLE>
+
+<if istemplate>
+<TABLE width="100%" bgcolor="#f5f5f5" cellpadding="5" style="border: solid 1px #7f9db9;">
+   <TR>
+        <TD align="center"><input type="submit" name="preview" value="{button_preview_template}" onClick="document.forms['editForm'].target = '_blank'; document.forms['editForm'].elements['action'].value = 'preview';"> <input type="button" name="restore" value="{button_restore_template}" onClick="location.href='?action=restore&item={KeyValue}'"></TD>
+   </TR>
+</TABLE>
+</if istemplate>
+
+<TABLE width="100%" cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+<TR><TD align=left width="1%"><input type="submit" name="save" value="{button_save}" onClick="document.forms['editForm'].target = ''; document.forms['editForm'].elements['action'].value = 'save';">&nbsp;</td><td align="left" width="1%">&nbsp;<input type="checkbox" name="return" value="1" {return}>&nbsp;</td><td align="left" width="1%"><nobr>{caption_return}</nobr></TD><TD align=right width="97%"><input type="button" name="back" value="{button_back}" onClick="location.href='{referer}'"></TD></TR>
+
+</TABLE>

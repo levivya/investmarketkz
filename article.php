@@ -6,6 +6,7 @@ $conn=conn($DB_USER,$DB_PASS , $DB_DATABASE, $DB_HOSTNAME);
 if (!isset($type)) $type='news'; //defaul content is news
 $selected_menu='news';
 if (!isset($tags)) $tags='';
+if (!isset($body)) $body='';
 
 switch ($type) {
     case 'news':

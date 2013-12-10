@@ -1,0 +1,69 @@
+<html>
+<head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset={meta_charcode}" />
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<table cellspacing="0" cellpadding="0" id="tophead">
+	<tr>                            <!-- http://www.newsgrabber.inf0/member/ -->
+		<td width="1%" align="left" nowrap><nobr><span><strong>NewsGrabber {current_type}</strong> v.1.0.{current_ver}
+        <if updates_exists><a href="{HTTP_ROOT}admin/updates.php" title="{getupdate_menu_title} [NG_1.0.{last_ver}]"><img alt="{getupdate_menu_title} [NG_1.0.{last_ver}]" src="i/icons/attention.gif" alt="" width="16" height="16" border="0" align="top"></a></if updates_exists>
+        [ <a href="http://{HTTP_HOST}{HTTP_ROOT}" target="_blank">http://{HTTP_HOST}{HTTP_ROOT}</a> ] <div id="curtime" onMouseOver="intTime = 1000; clock_status();" onMouseOut="intTime = 60000; clock_status();" style="display: inline"></div></span></nobr>
+        <script language="JavaScript" id="timeLoader" src=""></script>
+        <script>
+        var intTime = 60000;
+
+        function clock_status() {
+            window.setTimeout("clock_status()", intTime);
+            document.getElementById('timeLoader').src="{HTTP_ROOT}admin/gettime.php?s="+(intTime == 1000 ? "1" : "0")+"&rnd="+Math.random();
+        }
+        clock_status(intTime);
+        </script>
+
+        </td>
+		<td width="99%" align="right" id="out"><a href="http://www.newsgrabber.inf0/manual/" target="_blank"><b>{help_menu_title}</b></a> ~ <a href="http://www.newsgrabber.inf0/forum/topic7.html" target="_blank"><b>{faq_menu_title}</b></a> ~ <a href="mailto:support@newsgrabber.inf0"><b>{report_menu_title}</b></a> ~ <a href="http://www.newsgrabber.inf0/forum/" target="_blank"><b>{forum_menu_title}</b></a></td>
+		<td width="1%" align="left"><a href="logout.php"><img src="i/exit.gif" alt="{exit_menu_title}" width="24" height="24" border="0"></a></td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" width="100%" height="93%" border="0">
+	<tr><td valign="top" width="180" id="leftcolumn">
+		<table cellpadding="5" cellspacing="5" width="180" border="0" id="menu">
+			<tr><td class="button"><a href="options.php" id="pm"><img src="i/icons/tools.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{options_menu_title}</a></td></tr>
+			<tr><td class="button"><a href="users.php" id="pm"><img src="i/icons/user_group.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{users_menu_title}</a></td></tr>
+			<tr><td class="button"><a href="menu.php" id="pm"><img src="i/icons/db.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{structure_menu_title}</a></td></tr>
+			<tr><td class="button"><a href="groups.php" id="pm"><img src="i/icons/foldr.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{groups_menu_title}</a></td></tr>
+			<tr><td class="button"><a href="rss.php" id="pm"><img src="i/icons/note-pad.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{source_menu_title}</a></td></tr>
+			<tr><td class="button"><a href="news.php" id="pm"><img src="i/icons/opnbr.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{news_menu_title}</a></td></tr>
+            <tr><td class="button"><a href="comments.php" id="pm"><img src="i/icons/comment.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{news_comments_title}</a></td></tr>
+			<tr><td class="button"><a href="htmlblocks.php" id="pm"><img src="i/icons/addbk.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{htmlblocks_menu_title}</a></td></tr>
+			<tr><td class="button"><a href="templates.php" id="pm"><img src="i/icons/smicn.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{templates_menu_title}</a></td></tr>
+            <tr><td class="button"><a href="proxy.lists.php" id="pm"><img src="i/icons/note-pad.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{proxylists_menu_title}</a></td></tr>
+            <tr><td class="button"><a href="proxy.php" id="pm"><img src="i/icons/proxy.gif" alt="" width="16" height="16" border="0" align="left" hspace="7">{proxy_menu_title}</a></td></tr>
+		</table>
+		<div id="apdatenews">
+		</div>
+        </td>
+
+        <td valign="top" width="90%" id="rightcolumn">
+
+		<table cellpadding="0" cellspacing="0" border="0" id="maincontent" width="100%">
+			<tr>
+				<td valign="top" width="100%" id="contentblock">
+
+			<h1 class="pageTitle">{page_title}</h2>
+
+			<tpl content>
+
+				</td>
+			</tr>
+		</table>
+		
+		</tr>
+		</table>
+
+</body>
+</html>

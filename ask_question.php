@@ -144,7 +144,7 @@ for ($i=$from;$i<$to;$i++)
    {
 
     $class=(fmod(($i),2)==0)?('class="messages dark"'):('class="messages"');
-    $tags=split(",", $vquestions['tags'][$i]);
+    $tags=explode(",", $vquestions['tags'][$i]);
     $tags_str="";
     if ($vquestions['tags'][$i]!='')
     {

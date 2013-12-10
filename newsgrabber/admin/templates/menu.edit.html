@@ -1,0 +1,132 @@
+<div class="pageAction"><p align="center"><b>{action}</b></p></div>
+<if menu_full_edit>
+<!-- TinyMCE -->
+<script language="javascript" type="text/javascript" src="{HTTP_ROOT}tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+    tinyMCE.init({
+        mode : "exact",
+        theme : "advanced",
+        language : navigator.systemLanguage,
+        elements : "menu_content",
+        /*document_base_url: "/",*/
+        relative_urls: false,
+        plugins : "table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,zoom,flash,searchreplace,print,contextmenu,paste,directionality,fullscreen",
+        /*theme_advanced_buttons1_add_before : "save,newdocument,separator",*/
+        theme_advanced_buttons1_add : "fontselect,fontsizeselect",
+        theme_advanced_buttons2_add : "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor",
+        theme_advanced_buttons2_add_before: "cut,copy,paste,pastetext,pasteword,separator,search,replace,separator",
+        theme_advanced_buttons3_add_before : "tablecontrols,separator",
+        theme_advanced_buttons3_add : "emotions,iespell,flash,advhr,separator,print,separator,ltr,rtl,separator,fullscreen",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        content_css : "{$HTTP_ROOT}css/css.css",
+        plugi2n_insertdate_dateFormat : "%Y-%m-%d",
+        plugi2n_insertdate_timeFormat : "%H:%M:%S",
+        extended_valid_elements : "hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
+        external_link_list_url : "example_link_list.js",
+        external_image_list_url : "example_image_list.js",
+        flash_external_list_url : "example_flash_list.js",
+        file_browser_callback : "fileBrowserCallBack",
+        paste_use_dialog : false,
+        theme_advanced_resizing : true,
+        theme_advanced_resize_horizontal : false,
+        theme_advanced_link_targets : "",
+        paste_auto_cleanup_on_paste : true,
+        paste_convert_headers_to_strong : false,
+        paste_strip_class_attributes : "all"
+    });
+
+    function fileBrowserCallBack(field_name, url, type, win) {
+        // This is where you insert your custom filebrowser logic
+        win.focus();
+        var args = new Array();
+        var arr = new Array();
+        args['filter'] = field_name == 'src' ? new Array('jpg', 'gif', 'png') : new Array('swf');
+        arr = win.showModalDialog("{HTTP_ROOT}admin/php/browser.php", args, "dialogWidth:550px; dialogHeight:420px; status:no; help:no;");
+        // Insert new URL, this would normaly be done in a popup
+        if (arr) win.document.forms[0].elements[field_name].value = arr["path"];
+    }
+</script>
+<!-- /TinyMCE -->
+</if menu_full_edit>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" border="0" bgcolor="#f5f5f5" style="border: solid 1px #7f9db9; margin-bottom: 5px;">
+<form action="menu.php" name="editForm" method="POST">
+<input type="hidden" name="menu_id" value="{menu_id}">
+<input type="hidden" name="menu_owner" value="{menu_owner}">
+<input type="hidden" name="referer" value="{referer}">
+<input type="hidden" name="action" value="save">
+   <if ErrorMessage><TR><TD colspan=2><font color=red>{ErrorMessage}</font></TD></TR></if ErrorMessage>
+
+   <TR><TD width="100px" align="right">{title_menu_fields_owner}:</TD>
+       <TD align=left><b>{menu_owner_name}</b></TD></TR>
+
+   <TR><TD width="100px" align="right">{title_menu_fields_name}<font color=red>*</font>:</TD>
+       <TD align=left><input type="text" name="menu_name" value="{menu_name}" style="width: 100%;"></TD></TR>
+
+   <TR><TD width="100px" align="right">{title_menu_fields_dir}<font color=red>*</font>:</TD>
+       <TD align=left><input type="text" name="menu_dir" value="{menu_dir}" style="width: 100%;" <if menu_dir_edit>readonly</if menu_dir_edit>></TD></TR>
+
+   <TR><TD width="100px" align="right">TITLE:</TD>
+       <TD align=left><input type="text" name="menu_title" value="{menu_title}" style="width: 100%;"></TD></TR>
+
+   <TR><TD width="100px" align="right">KEYWORDS:</TD>
+       <TD align=left><input type="text" name="menu_keywords" value="{menu_keywords}" style="width: 100%;"></TD></TR>
+
+   <TR><TD width="100px" align="right"><nobr>DESCRIPTION:</nobr></TD>
+       <TD align=left><input type="text" name="menu_description" value="{menu_description}" style="width: 100%;"></TD></TR>
+
+   <if menu_full_edit>
+   <TR><TD width="100px" align="right">{title_menu_fields_active}:</TD>
+       <TD align=left><input type="checkbox" name="menu_active" value="checked" {menu_active}></TD></TR>
+</TABLE>
+   <textarea name="menu_content" style="width: 100%; height: 400px">{menu_content}</textarea>
+
+<TABLE width="100%" cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+<TR><TD align=left width="1%"><input type="button" name="save" value="{button_save}" onClick="Save_();">&nbsp;</td><TD align=right width="97%"><input type="button" name="back" value="{button_back}" onClick="location.href='{referer}'"></TD></TR>
+</TABLE>
+   </if menu_full_edit>
+
+   <if !menu_full_edit>
+   
+<TABLE width="100%" cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+<TR><TD align=left width="1%"><input type="submit" name="save" value="{button_save}">&nbsp;</td><TD align=right width="97%"><input type="button" name="back" value="{button_back}" onClick="location.href='{referer}'"></TD></TR>
+</TABLE>
+   
+</if !menu_full_edit>
+</form>
+
+<if menu_full_edit>
+<script>
+  function Save_() {
+    closed_dir = new Array('admin', 'i', 'image', 'style');
+    for (i in closed_dir) {
+      if (document.forms['editForm'].menu_dir.value == closed_dir[i]) {
+                alert("Это имя папки запрещено.");
+                document.forms['editForm'].menu_dir.focus();
+                return;
+      }
+    }
+    switch(true) {
+      case (document.forms['editForm'].menu_name.value == '') :
+                alert("Укажите название");
+                document.forms['editForm'].menu_name.focus();
+                return;
+                break;
+      case (document.forms['editForm'].menu_dir.value == '' && '{menu_id}' != '1') :
+                alert("Это имя папки запрещено.");
+                document.forms['editForm'].menu_dir.focus();
+                return;
+                break;
+      case (document.forms['editForm'].menu_dir.value == '') :
+                //alert("Введите папку");
+                //document.forms['editForm'].menu_dir.focus();
+                //return;
+                break;
+    }
+    //document.forms['editForm'].menu_content.value = GetText();
+    document.forms['editForm'].submit();
+  }
+</script>
+</if menu_full_edit>

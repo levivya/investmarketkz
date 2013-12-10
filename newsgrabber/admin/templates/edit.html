@@ -1,0 +1,62 @@
+<div class="pageAction"><p align="center"><b>{action}</b></p></div>
+<script>
+   function openCalendar(obj) {
+        var args = new Array();
+        args["day"] = document.all[obj + '_day'].value;
+        args["month"] = document.all[obj + '_month'].value;
+        args["year"] = document.all[obj + '_year'].value;
+        a = window.open("{HTTP_ROOT}admin/php/dateselect.php?obj=" + obj + "&day="+args["day"]+"&month="+args["month"]+"&year="+args["year"]+"&cday="+args["day"]+"&cmonth="+args["month"]+"&cyear="+args["year"], "calendar" , "width=252,height=190,toolbar=0,directories=0,menubar=0,status=0,resizable=0,location=0,scrollbars=no,copyhistory=0,top=250,left=250");
+        a.focus();
+   }
+
+
+   function check() {
+       document.editForm.save.disabled = true;
+       <loop req_values>
+       var {field_name} = document.editForm.{field_name}.value; </loop req_values>
+
+
+       switch (true) {
+       <loop required>
+         case ({js_error}):
+              alert("{errormsg}");
+              document.editForm.{field_name}.focus();
+              document.editForm.save.disabled = false;
+              return false;
+       </loop required>
+       }
+
+       return true;
+   }
+</script>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" bgcolor="#f5f5f5" style="border: solid 1px #7f9db9; margin-bottom: 5px;">
+<form name="editForm" method="POST" onSubmit="return check();" enctype="multipart/form-data">
+<input type="hidden" name="{KeyName}" value="{KeyValue}">
+<input type="hidden" name="action" value="save">
+<input type="hidden" name="referer" value="{referer}">
+   <if Error><TR><TD colspan=2><font color=red>{ErrorMessage}</font></TD></TR></if Error>
+
+   <loop fields>
+   <TR><TD width="150" valign=top align="right">{field_title}:</TD>
+       <TD align=left>
+       <if as_plain>{{field_name}}<input type="hidden" name="{field_name}" value="{{field_name}}"></if as_plain>
+       <if as_text><input type="text" name="{field_name}" value="{{field_name}}" style="width: 100%;"></if as_text>
+       <if as_password><input type="password" name="{field_name}" value="{{field_name}}" style="width: 100%;"></if as_password>
+       <if as_select><selector {field_name}<if as_multiplie>[]</if as_multiplie> style="width: 100%;" <if as_multiplie>multiple</if as_multiplie>></if as_select>
+       <if as_textarea><textarea name="{field_name}" style="width: 100%; height=300px;">{{field_name}}</textarea></if as_textarea>
+       <if as_enabler><input type=checkbox name="{field_name}" value="checked" {{field_name}}></if as_enabler>
+       <if as_file><input type="file" name="{field_name}" style="width: 50%;"> <if {field_name}><input type="hidden" name="current_{field_name}" value="{{field_name}}">{caption_current_file}: {{field_name}}, <input type="checkbox" name="{field_name}_delete" value="1"> {button_delete}</if {field_name}></if as_file>
+       <if as_date><input type="text" id="{field_name}_day" name="{field_name}_day" value="{{field_name}_day}" size="1" maxlength="2">.<input type="text" id="{field_name}_month" name="{field_name}_month" value="{{field_name}_month}" size="1" maxlength="2">.<input type="text" id="{field_name}_year" name="{field_name}_year" value="{{field_name}_year}" size="4" maxlength="4">
+       <a border="0" style="text-decoration: none;" title="Календарь" href="javascript:openCalendar('{field_name}');"><img border="0" src="{HTTP_ROOT}admin/i/b_calendar.png" width="16" height="16" alt="Календарь"/></a>
+       </if as_date>
+       <if as_datetime><input type="text" name="{field_name}_hour" value="{{field_name}_hour}" size="1" maxlength="2">:<input type="text" name="{field_name}_minute" value="{{field_name}_minute}" size="1" maxlength="2">  <input type="text" name="{field_name}_day" value="{{field_name}_day}" size="1" maxlength="2">.<input type="text" name="{field_name}_month" value="{{field_name}_month}" size="1" maxlength="2">.<input type="text" name="{field_name}_year" value="{{field_name}_year}" size="4" maxlength="4">
+       <a border="0" style="text-decoration: none;" title="Календарь" href="javascript:openCalendar('{field_name}');"><img border="0" src="{HTTP_ROOT}admin/i/b_calendar.png" width="16" height="16" alt="{caption_calendar}"/></a>
+       </if as_datetime>
+       <if as_time><input type="text" name="{field_name}_hour" value="{{field_name}_hour}" size="1" maxlength="2">:<input type="text" name="{field_name}_minute" value="{{field_name}_minute}" size="1" maxlength="2"></if as_time>
+       </TD></TR>
+   </loop fields>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-top: 10px;">
+   <TR><TD align=left width="1%"><input type="submit" name="save" value="{button_save}">&nbsp;</td><td align="left" width="1%">&nbsp;<input type="checkbox" name="return" value="1" {return}>&nbsp;</td><td align="left" width="1%"><nobr>{caption_return}</nobr></TD><TD align=right width="97%"><input type="button" name="back" value="{button_back}" onClick="location.href='{referer}'"></TD></TR>
+</TABLE>

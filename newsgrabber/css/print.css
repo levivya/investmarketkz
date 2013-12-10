@@ -1,0 +1,48 @@
+body {
+/*	margin: .6in;*/
+	font : "Times New Roman", Times, serif;
+	font-stretch : normal;
+	height : auto;
+	line-height : normal;
+	letter-spacing : normal;
+	font-size: 12pt;
+	}
+h1, h2, h3 {
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	}
+#title h2 {
+	color: gray;
+	font-size: 90%;
+	font-weight: normal;
+	margin-bottom: 1.5em;
+	}
+#banner, #title, #sidebar, #extra, #footer, h4.date, #nav, #theme, #sidebar, .noprint, hr {
+	display: none;
+	}
+a:link, a:visited {
+	color: gray;
+	}	
+#logo {
+	width: 100%;
+	border-bottom: solid 1px #000;
+	margin-bottom: 1em;
+	}
+#logo img {
+	display: block;
+	padding: .5em 0em;
+	}
+/* print URLs after link text */
+#content .entry p a:link:after, #content .entry p a:visited:after {
+	content: " (" attr(href) ") ";
+	}
+#full-text img {
+	width: 50%;
+	height: auto;
+	margin: 0em 1em;
+	}
+p.forprint {
+	display: block;
+	width: 100%;
+	padding-top: 1em;
+	border-top: solid 1px #000;
+	}

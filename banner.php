@@ -51,7 +51,8 @@ if ($abcount == $bancount) {
 
 $display_banner = rand(1,$bancount);      //generates the randome number from 1 to the number of banners :)
 
-list($src,$alt,$link,,$bid,$type,$dis_times,$dised_times,$target,$dtype,$location) = split('[|]',$banner[$display_banner]);
+
+list($src,$alt,$link,,$bid,$type,$dis_times,$dised_times,$target,$dtype,$location) = explode('|',$banner[$display_banner]);
 
     if (($dis_times > $dised_times) or ($dis_times == 0)) {
     $rande = true;
@@ -196,7 +197,7 @@ setInterval('watermark()',100);
 </script>";
        }
     }else if($type == 2) {                      // flash check
-       $swfdims = split('[x]',$link);
+       $swfdims = explode('x',$link);
        print "<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0' width='$swfdims[0]' height='$swfdims[1]'>";
        print "<param name=movie value='$src'>";
        print "<param name=quality value=high>";

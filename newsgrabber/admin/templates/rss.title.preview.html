@@ -1,0 +1,28 @@
+<html>
+<head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="maincontent" style="margin: 10px; padding: 20px; background-color: #fff; border: solid 1px #dedede;">
+<h1 class="pageTitle">Проверка получения заголовков</h2>
+<p><b>Лента : {rss_title} (<a href="{rss_url}" target="_blank">{rss_url}</a>)</b></p><br><br>
+<script>focus();</script>
+
+<if errorMessage><P style="color:red">{errorMessage}</P></if errorMessage>
+
+<loop items>
+<div style="border-bottom: solid 1px #dedede; margin-bottom: 40px;">
+<b>{title}</b><br>
+<b>DESCRIPTION:</b>
+<p>{description}</p><br>
+<b>TEXT:</b>
+<p>{text}</p><br>
+link: <a href="{link}">{link}</a><br>
+image: {image}<br><br>
+</div>
+</loop items>
+</body>
+</html>

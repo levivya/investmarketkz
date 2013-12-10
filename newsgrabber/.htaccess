@@ -1,0 +1,12 @@
+
+php_value register_globals 0
+php_value magic_quotes_runtime 0
+php_value magic_quotes_gpc 1
+
+AddDefaultCharset windows-1251
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.gif|\.jpg|\.png|\.swf)$
+RewriteRule ^(.*)$ /newsgrabber/index.php?path=/$1 [L,QSA]

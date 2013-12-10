@@ -1,0 +1,22 @@
+<div class="pageAction"><p align="center"><b>{action}</b></p></div>
+{message}
+
+<if updates_exists><h2>Текущее обновление</h2>
+{update_description}
+<br><br><br>
+{bak_dir_error}
+<a href="?updates=setup">{caption_install_updates}</a> | <a href="?updates=setup&nobak=1">{caption_install_updates} (NO BACKUP)</a>
+
+<br><br><br>
+</if updates_exists>
+
+<h2>История обновлений</h2>
+<br>
+
+<table cellpadding="0" cellspacing="0" border="0" id="maintable" width="100%">
+<loop updates>
+<tr>
+    <td class="list" valign="top" align="center"><p><if not_installed><font color=red></if not_installed><b>{updates_ver}</b></p><if restore><p><a href="updates.php?updates=restore">restore</a></p></if restore></td>
+    <td class="list">{description}</td>
+</tr>
+</loop updates>

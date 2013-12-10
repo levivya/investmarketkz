@@ -1,0 +1,87 @@
+<div class="pageAction">{page_subtitle}</div>
+<form name="">
+            <fieldset style="margin-top: 10px;">
+            <legend><b>{caption_filter_title}</b></legend>
+            <input type="text" name="search" value="{search}"> <input type="submit" name="s" value="{button_search}"><br>
+            <small>{caption_search}</small>
+            </fieldset>
+</form>
+<br>
+<b>{caption_total_records}: {count_items}</b>
+<form name="list" method="POST">
+<script language="JavaScript">
+<!--
+  var selected = false;
+
+  function select_all() {
+      selected = selected != true;
+      for(element in document.forms['list'].elements) {
+         if (document.forms['list'].elements[element] && document.forms['list'].elements[element].type == "checkbox" && document.forms['list'].elements[element].name.substr(0, 9) == "selected[") {
+            document.forms['list'].elements[element].checked = selected;
+         }
+      }
+
+      return false;
+  }
+
+  function send_group_action(action) {
+      if (action == '') {
+         return;
+      }
+
+      if (confirm("Вы уверены?")) {
+        document.forms['list'].submit();
+      } else {
+        document.forms['list'].group_action.value = "";
+      }
+  }
+//-->
+</script>
+
+<table cellpadding="0" cellspacing="0" border="0" id="maintable" width="100%">
+<tr>
+        <td class="listHeader" width="1%" align="center"><a href="javascript:void(0);" onClick="select_all();">X</a></td>
+        <loop fields>
+        <td class="listHeader" width="100px" align="center"><nobr><b><a href=?{links}order={field_name}&sort={sort}&page={items_page}>{field_title}</a></b></nobr></td>
+        </loop fields>
+        <td class="listHeader" width="100%" align="center"><nobr><b>{title_comments_fields_author}, {title_comments_fields_text}</b></nobr></td>
+
+        <td class="listHeader" align="center" width="20"><nobr>&nbsp;</nobr></td>
+</tr>
+<loop items>
+<tr onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';">
+        <td class="list" align="center"><input type="checkbox" name="selected[{{KeyName}}]" value="{{KeyName}}"></td>
+        <loop fields_values>
+        <td class="list">{{field_name}}</td>
+        </loop fields_values>
+
+        <td class="list" style="padding: 10px 5px; ">
+        <P>{comments_author}</P>
+        <P>{comments_text}</P>
+        {title_comments_fields_news}: {news_title}
+        </td>
+
+        <td class="list" align="center">    <nobr>
+                | <if edit><a href="?action=edit&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/enzy.gif" align="absmiddle" class="absmiddle" alt="{button_edit}" border="0"/></a> | </if edit>
+                <if delete><a href="?action=delete&item={{KeyName}}{add_info}" onClick="return window.confirm('{caption_delete_confirm} &quot;{delete_name}&quot;?')"><img src="{HTTP_ROOT}admin/i/icons/forum_del_threads.gif" align="absmiddle" class="absmiddle" alt="{button_delete}" border="0"/></a> |</if delete></nobr></td>
+</tr>
+</loop items>
+<if moderate>
+<tr>
+        <td class="listHeader" width="100%" colspan="7" align="right"><input type="submit" value="{button_save}"></td>
+</tr>
+</if moderate>
+</table>
+<div style="padding-top: 10px;">
+{caption_groups_action}&nbsp;
+        <select name="group_action" onChange="send_group_action(this.value);">
+            <option value="">----------------</option>
+            <if delete><option value="delete">{button_delete}</option></if delete>
+            <if activate><option value="activate">{button_activate}</option>
+                         <option value="deactivate">{button_deactivate}</option></if activate>
+            <loop group_actions><option value="{action}">{action_title}</option></loop group_actions>
+
+        </select>
+</form>
+</div>
+<br><tpl pages>

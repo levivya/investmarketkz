@@ -1,0 +1,162 @@
+<div class="pageAction"><p align="center"><b>{action}</b></p></div>
+<script>
+   function check() {
+       document.editForm.save.disabled = true;
+
+       var rss_url = document.editForm.rss_url.value;
+
+
+       switch (true) {
+
+         case (rss_url == ''):
+              alert("Укажите url!");
+              document.editForm.rss_url.focus();
+              document.editForm.save.disabled = false;
+              return false;
+
+       }
+
+       return true;
+   }
+
+   function open_preview(action) {
+       document.forms['preview'].elements['action'].value = action;
+       document.forms['preview'].elements['rss_titletemplate'].value = action == 'preview_text' ? document.forms['editForm'].rss_texttemplate.value : document.forms['editForm'].rss_titletemplate.value;
+       document.forms['preview'].elements['prrss_url'].value = document.forms['editForm'].rss_prurl.value;
+       document.forms['preview'].elements['rss_title'].value = document.forms['editForm'].rss_title.value;
+       document.forms['preview'].elements['rss_url'].value = document.forms['editForm'].rss_url.value;
+       document.forms['preview'].elements['rss_print_link_from'].value = document.forms['editForm'].rss_print_link_from.value;
+       document.forms['preview'].elements['rss_print_link_to'].value = document.forms['editForm'].rss_print_link_to.value;
+       document.forms['preview'].elements['rss_replacement'].value = document.forms['editForm'].rss_replacement.value;
+
+       document.forms['preview'].submit();
+   }
+</script>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" border="0" bgcolor="#f5f5f5" style="border: solid 1px #7f9db9; margin-bottom: 5px;">
+<form name="editForm" method="POST" onSubmit="return check();" enctype="multipart/form-data">
+<input type="hidden" name="{KeyName}" value="{KeyValue}">
+<input type="hidden" name="action" value="save">
+<input type="hidden" name="referer" value="{referer}">
+   <if Error><TR><TD colspan=2><font color=red>{ErrorMessage}</font></TD></TR></if Error>
+
+
+   <TR><TD width="220" align="right" valign=top>{title_groups_id}:</TD>
+       <TD width="90%" align=left>
+       <selector groups_id style="width: 100%;" >
+       </TD></TR>
+
+   <TR><TD align="right" valign=top>{title_rss_title}:</TD>
+       <TD align=left>
+       <input type="text" name="rss_title" value="{rss_title}" style="width: 100%;">
+       </TD></TR>
+
+   <TR><TD align="right" valign=top>{title_rss_url}<font color=red>*</font>:</TD>
+       <TD align=left>
+       <input type="text" name="rss_url" value="{rss_url}" style="width: 100%;">
+       </TD></TR>
+
+   <if full_edit>
+   <TR><TD align="right" valign=top>
+		<nobr>{title_rss_print_page} [ <a href="#" title="{caption_rss_print_page}"><b>?</b></a> ]</nobr>
+        </TD>
+       <TD align=left>
+       <input type="text" name="rss_print_link_from" value="{rss_print_link_from}" style="width: 43%;">
+       {caption_rss_changeto}
+       <input type="text" name="rss_print_link_to" value="{rss_print_link_to}" style="width: 43%;">
+       </TD></TR>
+
+   <TR><TD align="right" valign=top>{title_rss_texttemplate} {caption_rss_texttemplate}
+   </TD>
+       <TD align=left>
+       <textarea name="rss_texttemplate" style="width: 100%; height=200px;">{rss_texttemplate}</textarea><br>
+       {caption_newsurl} <input type="text" name="rss_prurl" value="{rss_prurl}"> <input type="button" value="{button_check_template}" onClick="open_preview('preview_text');">
+       </TD></TR>
+
+   <TR><TD align="right" width="100" valign=top><nobr>{title_rss_uniq_id}  [ <a href="#" title="{caption_rss_uniq_id}"><b>?</b></a> ]</nobr>
+   </TD>
+       <TD align=left>
+       <input type="text" name="rss_uniq_id" value="{rss_uniq_id}" style="width: 100%;">
+       </TD></TR>
+
+
+   <TR><TD align="center">{title_rss_fields}</TD>
+       <TD align=left>
+<if rss_error><font color="red"><b>{errors_rss_open}</b></font><br></if rss_error>
+	   <table>
+	   <tr><td>{title_news_title}</td><td><selector rss_news_title></td></tr>
+	   <tr><td>{title_news_description}</td><td><selector rss_news_description></td></tr>
+           <tr><td>{title_news_text}</td><td><selector rss_news_text></td></tr>
+	   <tr><td>{title_news_link}&nbsp;</td><td><selector rss_news_link></td></tr>
+	   </table>
+       </TD></TR>
+
+   <TR><TD align="right" valign=top>{title_rss_titletemplate}:<br>
+   {caption_rss_titletemplate}
+   </TD>
+       <TD align=left>
+       <textarea name="rss_titletemplate" style="width: 100%; height=200px;">{rss_titletemplate}</textarea><br>
+       <input type="button" value="{button_view}" onClick="open_preview('preview_titles');">
+       </TD></TR>
+
+   <TR><TD align="right">{title_rss_interval}:</TD>
+       <TD align=left>
+       <input type="text" name="rss_interval" value="{rss_interval}" style="width: 100%;">
+       </TD></TR>
+
+   <TR><TD align="right">{title_rss_recivetext}:</TD>
+       <TD align=left>
+       <input type=checkbox name="rss_recivetext" value="checked" {rss_recivetext}>
+       </TD></TR>
+   <TR><TD align="right">{title_rss_reciveimages}:</TD>
+       <TD align=left>
+       <input type=checkbox name="rss_reciveimages" value="checked" {rss_reciveimages}>
+       </TD></TR>
+
+   <TR><TD align="right">{title_rss_reciveswf}:</TD>
+       <TD align=left>
+       <input type=checkbox name="rss_reciveswf" value="checked" {rss_reciveswf}>
+       </TD></TR>
+
+   <TR><TD align="right">{title_rss_striptags_text}:</TD>
+       <TD align=left>
+       <input type=checkbox name="rss_striptags_text" value="checked" {rss_striptags_text}>&nbsp;{caption_rss_except} <input type="text" name="rss_tags_leave" value="{rss_tags_leave}" maxlength=256> ({caption_rss_except1} &lt;a&gt;&lt;img&gt;...)
+       </TD></TR>
+
+   <TR><TD align="right">{title_rss_ignore_global_manual}:</TD>
+       <TD align=left>
+       <input type=checkbox name="rss_ignore_global_manual" value="checked" {rss_ignore_global_manual}>
+       </TD></TR>
+
+   <TR><TD align="right">{title_rss_active}:</TD>
+       <TD align=left>
+       <input type=checkbox name="rss_active" value="checked" {rss_active}>
+       </TD></TR>
+
+
+   <TR><TD align="right" valign=top>{title_rss_replacement}:
+   </TD>
+       <TD align=left>
+       <textarea name="rss_replacement" style="width: 100%; height=200px;">{rss_replacement}</textarea><br>
+       </TD></TR>
+
+
+   </if full_edit>
+</TABLE>
+
+<TABLE width="100%" cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+<TR><TD align=left width="1%"><input type="submit" name="save" value="{button_save}">&nbsp;</td><if show_return><td align="left" width="1%">&nbsp;<input type="checkbox" name="return" value="1" {return}>&nbsp;</td><td align="left" width="1%"><nobr>{caption_return}</nobr></TD></if show_return><TD align=right width="97%"><input type="button" name="back" value="{button_back}" onClick="location.href='{referer}'"></TD></TR>
+</TABLE>
+
+</form>
+<form name="preview" method="POST" action="rss.php" target="_blank">
+<input type="hidden" name="item" value="{KeyValue}">
+<input type="hidden" name="action">
+<input type="hidden" name="rss_title">
+<input type="hidden" name="rss_url">
+<input type="hidden" name="prrss_url">
+<input type="hidden" name="rss_titletemplate">
+<input type="hidden" name="rss_print_link_from">
+<input type="hidden" name="rss_print_link_to">
+<input type="hidden" name="rss_replacement">
+</form>

@@ -1,0 +1,167 @@
+<div class="pageAction">{page_subtitle}</div>
+<if moderate><p><a href={HTTP_ROOT}admin/news.php><b>{button_moderate_exit}</b></a></p></if moderate>
+<if !moderate>
+<p><a href={HTTP_ROOT}admin/news.php?moderate=1><b>{button_moderate_enter} ({count_moderated})</b></a></p>
+<if add><p><a href=?action=edit&item=new><b>{button_add}</b></a></p></if add>
+<if !add>{add_disabled_text}</if !add>
+</if !moderate>
+<form name="list" method="POST">
+            <if rubrikators>
+			<fieldset style="margin-top: 10px;">
+			<legend><b>{caption_filter_title}</b></legend>
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr><td style="padding-right: 5px;">
+            <!-- рубрикаторы, если есть -->
+            <script>
+                function rubrikators(mode) {
+                        if (mode == 'delete' && !confirm('Вы уверены?')) return false;
+
+                        var url = '';
+                        <loop rubrikators>
+                        if (document.list.{TableName}.selectedIndex > 0) url += '&{IDField}='+document.list.{TableName}.options[document.list.{TableName}.selectedIndex].value;
+                        </loop rubrikators>
+                        if (document.list.from_day.value != '' || document.list.from_month.value != '' || document.list.from_year.value != '') {
+                           url += '&from_date=' + document.list.from_year.value + '-' + document.list.from_month.value + '-' + document.list.from_day.value;
+                        }
+                        if (document.list.to_day.value != '' || document.list.to_month.value != '' || document.list.to_year.value != '') {
+                           url += '&to_date=' + document.list.to_year.value + '-' + document.list.to_month.value + '-' + document.list.to_day.value;
+                        }
+                        if (document.list.items_per_page.value != '') {
+                           url += '&items_per_page=' + document.list.items_per_page.value;
+                        }
+                        if (mode == 'delete' && document.list.shingles.checked) url += '&shingles=1';
+                        if (mode == 'delete') url += '&filter=delete';
+
+                        location.href = '?'+url+'{add_info}';
+                }
+
+                function openCalendar(obj) {
+                        var args = new Array();
+                        args["day"] = document.getElementById(obj + '_day').value;
+                        args["month"] = document.getElementById(obj + '_month').value;
+                        args["year"] = document.getElementById(obj + '_year').value;
+                        a = window.open("{HTTP_ROOT}admin/php/dateselect.php?obj=" + obj + "&day="+args["day"]+"&month="+args["month"]+"&year="+args["year"]+"&cday="+args["day"]+"&cmonth="+args["month"]+"&cyear="+args["year"], "calendar" , "width=252,height=190,toolbar=0,directories=0,menubar=0,status=0,resizable=0,location=0,scrollbars=no,copyhistory=0,top=250,left=250");
+                        a.focus();
+                }
+
+
+            </script>
+            <loop rubrikators>
+            {TableTitle}:</td><td style="padding-right: 5px;"><selector {TableName}></td><td>
+            </loop rubrikators>
+
+            <!-- рубрикаторы, если есть -->
+	    </td></tr>
+	    </table>
+            {caption_datefrom}<input type="text" id="from_day" name="from_day" value="{from_day}" size="1" maxlength="2">.<input type="text" id="from_month" name="from_month" value="{from_month}" size="1" maxlength="2">.<input type="text" id="from_year" name="from_year" value="{from_year}" size="4" maxlength="4"><a border="0" style="text-decoration: none;" title="Календарь" href="javascript:openCalendar('from');"><img border="0" src="{HTTP_ROOT}admin/i/b_calendar.png" width="16" height="16" alt="Календарь"/></a>
+            {caption_dateto}<input type="text" id="to_day" name="to_day" value="{to_day}" size="1" maxlength="2">.<input type="text" id="to_month" name="to_month" value="{to_month}" size="1" maxlength="2">.<input type="text" id="to_year" name="to_year" value="{to_year}" size="4" maxlength="4"><a border="0" style="text-decoration: none;" title="Календарь" href="javascript:openCalendar('to');"><img border="0" src="{HTTP_ROOT}admin/i/b_calendar.png" width="16" height="16" alt="Календарь"/></a><br>
+            {caption_items_per_page}: <input type="text" name="items_per_page" value="{items_per_page}" size="3" maxlength="4"><br>
+            <input type="button" name="clear" value="{button_resetfilter}" onClick="location.href='?{add_info}'">
+            <input type="button" name="clear" value="{button_showfilter}" onClick="rubrikators();">
+            <input type="button" name="clear" value="{button_deletefilter}" onClick="rubrikators('delete');"> <input type="checkbox" name="shingles" value="1"> {caption_delete_shingles}
+            </fieldset>
+            </if rubrikators>
+            <tpl extend>
+<br>
+<b>{caption_total_records}: {count_items}</b>
+
+<script language="JavaScript">
+<!--
+  var selected = false;
+
+  function select_all() {
+      selected = selected != true;
+      for(element in document.forms['list'].elements) {
+         if (document.forms['list'].elements[element] && document.forms['list'].elements[element].type == "checkbox" && document.forms['list'].elements[element].name.substr(0, 9) == "selected[") {
+            document.forms['list'].elements[element].checked = selected;
+         }
+      }
+
+      return false;
+  }
+
+  function send_group_action(action) {
+      if (action == '') {
+         return;
+      }
+
+      if (confirm("Вы уверены?")) {
+        document.forms['list'].submit();
+      } else {
+        document.forms['list'].group_action.value = "";
+      }
+  }
+//-->
+</script>
+
+<table cellpadding="0" cellspacing="0" border="0" id="maintable" width="100%">
+<tr>
+        <td class="listHeader" width="1%" align="center"><a href="javascript:void(0);" onClick="select_all();">X</a></td>
+        <loop fields>
+        <td class="listHeader" width="{field_width}" align="center"><nobr><b><a href=?{links}order={field_name}&sort={sort}&page={items_page}>{field_title}</a></b></nobr></td>
+        </loop fields>
+        <if !moderate><td class="listHeader" align="RIGHT" width="10">&nbsp;</td></if !moderate>
+
+        <if moderate>
+        <td class="listHeader" width="100%" align="center"><nobr><b>{title_news_title}, {title_news_description}</b></nobr></td>
+
+        <td class="listHeader" align="center" width="20"><nobr><b>{title_news_action}</b></nobr></td>
+        <td class="listHeader" align="center"><b>{title_groups_id}</b></td>
+        </if moderate>
+
+</tr>
+<loop items>
+<tr onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';">
+        <td class="list" align="center"><input type="checkbox" name="selected[{{KeyName}}]" value="{{KeyName}}"></td>
+        <loop fields_values>
+        <td class="list">{{field_name}}</td>
+        </loop fields_values>
+        <if !moderate>
+        <td class="list" align="center">    <nobr>
+                | <loop actions><if {action}><a href="?action={action}&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/{action_image}" align="absmiddle" class="absmiddle" alt="{action_title}" border="0"/></a></if {action}><if !{action}><img src="{HTTP_ROOT}admin/i/icons/white.gif" align="absmiddle" class="absmiddle" alt="" border="0"/></if !{action}> | </loop actions>
+                <if activate><a href="?action={action}&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/{action_image}" align="absmiddle" class="absmiddle" alt="{action_title}" border="0"/></a> | </if activate>
+                <if edit><a href="?action=edit&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/enzy.gif" align="absmiddle" class="absmiddle" alt="{button_edit}" border="0"/></a> | </if edit>
+                <if delete><a href="?action=delete&item={{KeyName}}{add_info}" onClick="return window.confirm('{caption_delete_confirm} &quot;{delete_name}&quot;?')"><img src="{HTTP_ROOT}admin/i/icons/forum_del_threads.gif" align="absmiddle" class="absmiddle" alt="{button_delete}" border="0"/></a> |</if delete></nobr></td>
+        </if !moderate>
+
+        <if moderate>
+        <td class="list" style="padding: 10px 5px; ">
+        <input type="text" name="news[{news_id}][news_title]" value="{news_title}" style="width: 100%; font-family: Arial, Verdana;">
+        <textarea cols="" rows="4" name="news[{news_id}][news_description]" style="width: 100%; font-family: Arial, Verdana;">{news_description}</textarea>
+	<a href="{news_link}" target="_blank">Оригинал контента</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;{shingles{news_id}}
+        </td>
+
+        <td class="list" align="center" bgcolor="#f5f5f5">
+        <select name="news[{news_id}][action]">
+        <option value="" style="background-color: #fff; color: black;">{button_asis}</option>
+        <option value="activate" selected style="background-color: green; color: white;">{button_activate}</option>
+        <option value="delete" style="background-color: red; color: white;"><b>{button_delete}</b></option>
+        </select>
+        </td>
+
+        <td class="list" align="center">
+        <selector news[{news_id}][groups_id] style="width: 130px;">
+        </td>
+</if moderate>
+</tr>
+</loop items>
+<if moderate>
+<tr>
+        <td class="listHeader" width="100%" colspan="7" align="right"><input type="submit" value="{button_save}"></td>
+</tr>
+</if moderate>
+</table>
+<div style="padding-top: 10px;">
+{caption_groups_action}&nbsp;
+        <select name="group_action" onChange="send_group_action(this.value);">
+            <option value="">----------------</option>
+            <if delete><option value="delete">{button_delete}</option></if delete>
+            <if activate><option value="activate">{button_activate}</option>
+                         <option value="deactivate">{button_deactivate}</option></if activate>
+            <loop group_actions><option value="{action}">{action_title}</option></loop group_actions>
+			
+        </select>
+</form>
+</div>
+<br><tpl pages>

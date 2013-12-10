@@ -1,0 +1,14 @@
+<div id="pages">
+<b>{caption_pages_title}:</b><br />
+<div style="padding-top: 1em;">
+<if prev_page>
+<a href="?page={prev_page}{params}"><span style="font-size: 1.2em">&larr;</span>&nbsp;{caption_pages_prev}</a>&nbsp;&nbsp;</if prev_page><if next_page><a href="?page={next_page}{params}">{caption_pages_next}&nbsp;<span style="font-size: 1.2em">&rarr;</span></a></if next_page><br />
+</div>
+<div style="padding-top: 1em; font-weight: bold">
+<if prev_href><a href="?{prev}{params}">&nbsp;...&nbsp;</a></if prev_href>
+<loop pages>
+<if current_page{num_page}><span style="background-color: #DFDFE5; padding: 0.3em;">{num_page}</span></if current_page{num_page}><if !current_page{num_page}><A href="?page={num_page}{params}" style="padding: 0.3em;">{num_page}</a></if !current_page{num_page}>
+</loop pages>
+<if next_href><a href="?{next}{params}">&nbsp;...&nbsp;</a></if next_href>
+</div>
+</div>

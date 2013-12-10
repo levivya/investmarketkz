@@ -1,0 +1,207 @@
+<div class="pageAction"><p align="center"><b>Настройка получения новостей</b></p></div>
+
+<TABLE width="100%" cellspacing="0" cellpadding="5" border="0" bgcolor="#f5f5f5" style="border: solid 1px #7f9db9; margin-bottom: 5px;">
+<form name="editForm" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="action" value="save">
+   <if uploaderror><TR><TD style="color: red" colspan="2" align="center"><b>{errorMessage}</b></TD></TR></if uploaderror>
+   <TR><TD class="zagnast" colspan="2" align="center"><h2>Настройка получения новостей</h2></TD></TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[grab_text_use_proxy]" value="checked" {grab_text_use_proxy}></TD>
+	   <TD align="left" width="98%"><nobr>{title_grab_text_use_proxy}</nobr></TD>
+	   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[shingle_check]" value="checked" {shingle_check}></TD>
+       <TD align="left" width="98%"><nobr>{title_shingle_check} <input type="text" name="options[shingle_check_limit]" value="{shingle_check_limit}" style="width: 40px;">%</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[grab_shingles_days]" value="{grab_shingles_days}" style="width: 130px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_grab_shingles_days}</nobr></TD>
+   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[grab_text_save_images]" value="checked" {grab_text_save_images}></TD>
+	   <TD align="left" width="98%"><nobr>{title_grab_text_save_images}</nobr></TD>
+   </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_mogrify_path]" value="{rss_mogrify_path}" style="width: 130px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_mogrify_path}</nobr></TD>
+   </TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[rss_usegd]" value="checked" {rss_usegd}></TD>
+       <TD align="left" width="98%">{title_rss_usegd}</TD>
+   </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_sizes]" value="{rss_sizes}" style="width: 130px;"></TD>
+       <TD align="left" width="98%">{title_rss_sizes}</TD>
+   </TR>
+
+
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[grab_text_imagesize_limit]" value="{grab_text_imagesize_limit}" style="width: 130px;"></TD>
+		<TD align="left" width="98%">{title_grab_text_imagesize_limit}</TD>
+   </TR>
+
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[grab_manual_moderate]" value="checked" {grab_manual_moderate}></TD>
+	   <TD align="left" width="98%"><nobr>{title_grab_manual_moderate}</nobr></TD>
+   </TR>
+        
+   <TR>
+        <TD align="right" width="2%"><input type="text" name="options[grab_manual_email_addres]" value="{grab_manual_email_addres}" style="width: 160px;"></TD>
+		<TD align="left" width="98%"><nobr>{title_grab_manual_email_addres}</nobr></TD>
+   </TR>
+   
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[grab_manual_email_count]" value="{grab_manual_email_count}" style="width: 40px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_grab_manual_email_count}</nobr></TD>
+   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[manual_show_description]" value="checked" {manual_show_description}></TD>
+	   <TD align="left" width="98%"><nobr>{title_manual_show_description}</nobr></TD>
+   </TR>
+   
+   
+
+   <TR><TD class="zagnast" colspan="2" align="center"><h2>Отображение новостей</h2></TD></TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[news_use_translate]" value="checked" {news_use_translate}></TD>
+	   <TD align="left" width="98%"><nobr>{title_news_use_translate}</nobr></TD>
+	   </TR>
+   <TR>
+       <TD align="right" width="2%"><input type=text name="options[transtitle_maxlength]" value="{transtitle_maxlength}" style="width: 40px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_transtitle_maxlength}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[grab_links_encode]" value="checked" {grab_links_encode}></TD>
+	   <TD align="left" width="98%"><nobr>{title_grab_links_encode}</nobr></TD>
+	   </TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[grab_links_nofollow]" value="checked" {grab_links_nofollow}></TD>
+       <TD align="left" width="98%"><nobr>{title_grab_links_nofollow}</nobr></TD>
+       </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[grab_links_open_in_blank]" value="checked" {grab_links_open_in_blank}></TD>
+       <TD align="left" width="98%"><nobr>{title_grab_links_open_in_blank}</nobr></TD>
+    </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[grab_text_first_chars_use]" value="{grab_text_first_chars_use}" style="width: 40px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_grab_text_first_chars_use}</nobr></TD>
+   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[news_title_limit]" value="{news_title_limit}" style="width: 40px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_news_title_limit}</nobr></TD>
+   </TR>
+
+   <TR><TD align="left" width="98%" colspan="2">
+       <table width="100%">
+          <tr>
+		  	<td rowspan="2" width="2%"><nobr>{title_news_fields}&nbsp;&nbsp;&nbsp;&nbsp;</nobr></td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_date]" value="checked" {news_date}> {title_news_fields_date}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_title]" value="checked" {news_title}> {title_news_fields_header}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_image]" value="checked" {news_image}> {title_news_fields_image}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_group]" value="checked" {news_group}> {title_news_fields_group}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_text]" value="checked" {news_text}> {title_news_fields_text}</td>
+          </tr>
+          <tr>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_time]" value="checked" {news_time}> {title_news_fields_time}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_description]" value="checked" {news_description}> {title_news_fields_description}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_source]" value="checked" {news_source}> {title_news_fields_source}</td>
+             <td width="20%"><input type="checkbox" name="options[news_fields][news_subgroup]" value="checked" {news_subgroup}> {title_news_fields_subgroup}</td>
+          </tr>
+        </table>
+       </TD></TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[news_lastblock_enabled]" value="checked" {news_lastblock_enabled}></TD>
+<TD align="left" width="98%"><nobr>{title_news_lastblock_enabled}</nobr></TD>
+</TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[news_mainblock_enabled]" value="checked" {news_mainblock_enabled}></TD>
+       <TD align="left" width="98%"><nobr>{title_news_mainblock_enabled}</nobr></TD>
+   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[comments_enabled]" value="checked" {comments_enabled}></TD>
+       <TD align="left" width="98%"><nobr>{title_comments_enabled}</nobr></TD>
+   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[comments_use_captcha]" value="checked" {comments_use_captcha}></TD>
+       <TD align="left" width="98%"><nobr>{title_comments_use_captcha}</nobr></TD>
+   </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[groups_showall]" value="checked" {groups_showall}></TD>
+       <TD align="left" width="98%"><nobr>{title_groups_showall}</nobr></TD>
+       </TR>
+
+
+   <TR><TD class="zagnast" colspan="2" align="center"><h2>Настройки своей RSS-ленты</h2></TD></TR>
+   <TR>
+       <TD align="right" width="2%"><input type=checkbox name="options[rss_image_show]" value="checked" {rss_image_show}></TD>
+	   <TD align="left" width="98%"><nobr>{title_rss_image_show}</nobr></TD>
+   </TR>
+   
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_count]" value="{rss_count}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_count}</nobr></TD>
+       </TR>
+   <TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_title]" value="{rss_title}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_title}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_description]" value="{rss_description}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_description}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_lang]" value="{rss_lang}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_lang}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_copyright]" value="{rss_copyright}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_copyright}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_editormail]" value="{rss_editormail}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_editormail}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_category]" value="{rss_category}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_category}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_generator]" value="{rss_generator}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_generator}</nobr></TD>
+       </TR>
+
+   <TR>
+       <TD align="right" width="2%"><input type="file" name="rss_imageurl" style="width: 100%;"><if rss_imageurl> <a href="{HTTP_ROOT}img/{rss_imageurl}" target="_blank">{rss_imageurl}</a>, <input type="checkbox" name="rss_imageurl_delete" value="1"> {button_delete}</if rss_imageurl><input type="hidden" name="options[rss_imageurl]" value="{rss_imageurl}"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_imageurl}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_imagelink]" value="{rss_imagelink}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_imagelink}</nobr></TD>
+       </TR>
+   <TR>
+       <TD align="right" width="2%"><input type="text" name="options[rss_imagetitle]" value="{rss_imagetitle}" style="width: 160px;"></TD>
+       <TD align="left" width="98%"><nobr>{title_rss_imagetitle}</nobr></TD>
+       </TR>
+
+   <TR><TD class="zagnast" colspan="2" align="center"><h2>Разное</h2></TD></TR>
+   <TR><TD align="right" width="2%"><selector options[user_lang] style="width: 60px"></TD>
+       <TD align="left" width="98%">
+       <nobr>{title_user_lang}</nobr>
+       </TD></TR>
+
+
+</TABLE>
+
+<TABLE width="100%" cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+<TR><TD align=left width="1%"><input type="submit" name="save" value="{button_save}"></form></td><form method="POST"><input type="hidden" name="action" value="default"><TD align=right width="97%"><input type="submit" name="default" value="{button_default}"></form></TD></TR>
+</TABLE>

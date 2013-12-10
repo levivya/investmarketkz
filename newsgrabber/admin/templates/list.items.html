@@ -1,0 +1,97 @@
+<div class="pageAction">{page_subtitle}</div>
+<if add><p><a href=?action=edit&item=new{add_info}><b>{button_add}</b></a></p></if add>
+<if !add>{add_disabled_text}</if !add>
+<form name="list" method="POST">
+            <if rubrikators>
+			<fieldset style="margin-top: 10px;">
+			<legend><b>{caption_filter_title}</b></legend>
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr><td style="padding-right: 5px;">
+            <!-- рубрикаторы, если есть -->
+            <script>
+                function rubrikators() {
+                        var url = '';
+                        <loop rubrikators>
+                        if (document.list.{TableName}.selectedIndex > 0) url += '&{IDField}='+document.list.{TableName}.options[document.list.{TableName}.selectedIndex].value;
+                        </loop rubrikators>
+                        location.href = '?'+url+'{add_info}';
+                }
+            </script>
+                                <loop rubrikators>
+                                        {TableTitle}:</td><td style="padding-right: 5px;"><selector {TableName} onChange='rubrikators();'></td><td>
+                                </loop rubrikators>
+                        <input type="button" name="clear" value="{button_resetfilter}" onClick="location.href='?{add_info}'">
+            <!-- рубрикаторы, если есть -->
+						</td></tr>
+						</table>
+			</fieldset>
+            </if rubrikators>
+            <tpl extend>
+<br>
+						<b>{caption_total_records}: {count_items}</b>
+
+<script language="JavaScript">
+<!--
+  var selected = false;
+
+  function select_all() {
+      selected = selected != true;
+      for(element in document.forms['list'].elements) {
+         if (document.forms['list'].elements[element] && document.forms['list'].elements[element].type == "checkbox" && document.forms['list'].elements[element].name.substr(0, 9) == "selected[") {
+            document.forms['list'].elements[element].checked = selected;
+         }
+      }
+
+      return false;
+  }
+
+  function send_group_action(action) {
+      if (action == '') {
+         return;
+      }
+
+      if (confirm("Вы уверены?")) {
+        document.forms['list'].submit();
+      } else {
+        document.forms['list'].group_action.value = "";
+      }
+  }
+//-->
+</script>
+
+<table cellpadding="0" cellspacing="0" border="0" id="maintable" width="100%">
+<tr>
+        <td class="listHeader" width="1%" align="center"><a href="javascript:void(0);" onClick="select_all();">X</a></td>
+        <loop fields>
+        <td class="listHeader" width="{field_width}" align="center"><nobr><b><a href=?{links}order={field_name}&sort={sort}&page={items_page}>{field_title}</a></b></nobr></td>
+        </loop fields>
+        <td class="listHeader" align="center" width="10">&nbsp;</td>
+</tr>
+<loop items>
+<tr onmouseover="this.style.backgroundColor = 'whitesmoke';" onmouseout="this.style.backgroundColor = 'white';">
+        <td class="list" align="center"><input type="checkbox" name="selected[{{KeyName}}]" value="{{KeyName}}"></td>
+        <loop fields_values>
+        <td class="list">{{field_name}}</td>
+        </loop fields_values>
+        <td class="list" align="center">    <nobr>
+                | <loop actions><if {action}><a href="?action={action}&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/{action_image}" align="absmiddle" class="absmiddle" alt="{action_title}" border="0"/></a></if {action}><if !{action}><img src="{HTTP_ROOT}admin/i/icons/white.gif" align="absmiddle" class="absmiddle" alt="" border="0"/></if !{action}> | </loop actions>
+                <if activate><a href="?action={action}&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/{action_image}" align="absmiddle" class="absmiddle" alt="{action_title}" border="0"/></a> | </if activate>
+                <if edit><a href="?action=edit&item={{KeyName}}{add_info}"><img src="{HTTP_ROOT}admin/i/icons/enzy.gif" align="absmiddle" class="absmiddle" alt="{button_edit}" border="0"/></a> | </if edit>
+                <if delete><a href="?action=delete&item={{KeyName}}{add_info}" onClick="return window.confirm('{caption_delete_confirm} &quot;{delete_name}&quot;?')"><img src="{HTTP_ROOT}admin/i/icons/forum_del_threads.gif" align="absmiddle" class="absmiddle" alt="{button_delete}" border="0"/></a> |</if delete></nobr></td>
+                
+</tr>
+</loop items>
+</table>
+<div style="padding-top: 10px;">
+{caption_groups_action}&nbsp;
+        <select name="group_action" onChange="send_group_action(this.value);">
+            <option value="">----------------</option>
+            <if delete><option value="delete">{button_delete}</option></if delete>
+            <if activate><option value="activate">{button_activate}</option>
+                         <option value="deactivate">{button_deactivate}</option></if activate>
+            <loop group_actions><option value="{action}">{action_title}</option></loop group_actions>
+			
+        </select>
+</form>
+</div>
+<br><tpl pages>
